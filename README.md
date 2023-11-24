@@ -20,7 +20,7 @@ Syftet med ZoCom LIA Bootcamp är:
 
 **Frontend** skall vara byggd med React Typescipt enligt _monorepo-akitekturen_.
 
-Till er hjälp har ni boilerplate-projektet där en `Button`-komponent ( package ) samt `styles` finns att kika på.
+För att bättre förstå denna arkitektur så finns boilerplate-projektet där några olika packages finns samt [denna film]().
 
 |---|---|
 |Frontend|Backend|
