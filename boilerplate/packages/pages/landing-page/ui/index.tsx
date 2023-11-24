@@ -19,7 +19,7 @@ export const LandingPage = () => {
     return (
     <main className="landing-page">
         <h1 className='quote'>{quote?.value}</h1>
-        <Button onClick={() => handleFetchQuote()}>Fetch a Duck!</Button>
+        <Button onClick={() => handleFetchQuote()}>Fetch a quote!</Button>
     </main>
     )
 }
