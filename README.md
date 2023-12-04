@@ -22,17 +22,20 @@ Syftet med ZoCom LIA Bootcamp är:
 
 Ni är nya utvecklare på ZoCom code magic AB! Ert första uppdrag är att utveckla ett system till food trucken **Yum yum gimmi sum**.
 
-Systemet är en webbapplikation som skall tillgodose några olika behov ( se user stories ).
+Systemet är en webbapplikation som skall tillgodose några olika behov ( se user stories ) och se ut enligt [följande mockup](https://www.figma.com/file/KeFM1AHHgkPpt3KSi08hkB/Yum-yum-gimmi-sum?type=design&node-id=0%3A1&mode=design&t=J4OXlljHfDQI5TPX-1).
 
 ## Kravspec
 
 ### Teknisk kravspec
 
-**Frontend** skall vara byggd med React, Typescript, SCSS och Framer motion enligt _monorepo-arkitekturen_.
+#### Frontend
+
+Er frontend skall vara byggd med React, Typescript, SCSS och Framer motion enligt _monorepo-arkitekturen_.
 
 För att bättre förstå denna arkitektur så finns [boilerplate-projektet](/bolierplate) där några olika packages finns samt [denna film](https...).
 
-**Backend**
+#### Backend
+
 Backenden skall byggas i AWS med serverlessteknik. API:et skall säkras med en _API-nyckel_ vid deployment.
 
 - API-gateway
@@ -45,12 +48,15 @@ Backenden skall byggas i AWS med serverlessteknik. API:et skall säkras med en _
 
 - Som _kund_ vill jag kunna se en meny för att inspiereras och kunna välja vad jag vill äta.
 - Som _kund_ vill jag enkelt kunna klicka ihop en beställning
+- Som _kund_ vill jag kunna kunna ändra min beställning innan jag skickar iväg den
 - Som _personal_ vill jag kunna se beställningarna tydligt för att veta vad vi ska tillbereda
 - Som _personal_ vill jag ha beställningarna sorterade på tid ( äldst > nyast ) för att veta i vilken ordning dom skall tillberedas
-- Som _personal_ vill jag kunna makera när en beställning är redo att serveras för att meddela kunden att hämta den i luckan
-- Som _kund_ vill jag få en notis av något slag för att veta
+- Som _personal_ vill jag kunna markera när en beställning är redo att serveras för att meddela kunden att hämta den i luckan
+- Som _kund_ vill jag få en notis av något slag för att veta när min beställning är redo för avhämtning
+- Som _kund_ vill jag göra mina beställningar via telefonen då jag sällan har datorn med mig på lunchen
+- Som _personal_ vill jag kunna se beställningarna via en ipad i köket
 
 #### Nice to have
 
-Som _kund_ vill jag få en ETA baserat på hur många och hur stora beställningar som är före mig i kön, så att jag kan avgöra om jag hinner köpa tuggummi på närliggande affären så länge
-Som _kund_ vill jag få en notis från min telefon ( Notification API ) så att jag inte behöver hålla stenkoll på hemsidan konstant.
+- Som _kund_ vill jag få en ETA baserat på hur många och hur stora beställningar som är före mig i kön, så att jag kan avgöra om jag hinner köpa tuggummi på närliggande affären så länge
+- Som _kund_ vill jag få en notis från min telefons OS ( Notification API ) så att jag inte behöver hålla stenkoll på hemsidan konstant.
