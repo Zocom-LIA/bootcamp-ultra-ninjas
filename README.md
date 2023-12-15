@@ -32,7 +32,7 @@ Systemet är en webbapplikation som skall tillgodose några olika behov ( se use
 
 Er frontend skall vara byggd med React, Typescript, SCSS och Framer motion enligt _monorepo-arkitekturen_.
 
-För att bättre förstå denna arkitektur så finns [boilerplate-projektet](/bolierplate) där några olika packages finns samt [denna film](https...).
+För att bättre förstå denna arkitektur så finns i detta repo en [boilerplate till projektet](/boilerplate) där några olika packages finns.
 
 #### Backend
 
@@ -46,9 +46,10 @@ Backenden skall byggas i AWS med serverlessteknik. API:et skall säkras med en _
 
 #### Must have
 
+- Som _kund_ vill jag få en fin upplevelese av YYGS-sidan via min telefon.
 - Som _kund_ vill jag kunna se en meny för att inspiereras och kunna välja vad jag vill äta.
 - Som _kund_ vill jag enkelt kunna klicka ihop en beställning
-- Som _kund_ vill jag kunna kunna ändra min beställning innan jag skickar iväg den
+- Som _kund_ vill jag kunna kunna ändra min beställning innan jag skickar iväg den för jag är lite velig
 - Som _personal_ vill jag kunna se beställningarna tydligt för att veta vad vi ska tillbereda
 - Som _personal_ vill jag ha beställningarna sorterade på tid ( äldst > nyast ) för att veta i vilken ordning dom skall tillberedas
 - Som _personal_ vill jag kunna markera när en beställning är redo att serveras för att meddela kunden att hämta den i luckan
@@ -60,3 +61,5 @@ Backenden skall byggas i AWS med serverlessteknik. API:et skall säkras med en _
 
 - Som _kund_ vill jag få en ETA baserat på hur många och hur stora beställningar som är före mig i kön, så att jag kan avgöra om jag hinner köpa tuggummi på närliggande affären så länge
 - Som _kund_ vill jag få en notis från min telefons OS ( Notification API ) så att jag inte behöver hålla stenkoll på hemsidan konstant.
+- Som _kund_ vill jag kunna göra en beställning antingen som *guest* eller inloggad *customer*.
+- Som _kund_ av typ inloggad *customer* vill jag kunna se min orderhistorik
