@@ -1,1 +1,38 @@
-@use '@zocom/styles' as *;
+@use "@zocom/styles" as *;
+
+.header {
+  width: 100%;
+  background-color: rgb(92, 172, 145); // temporary så man ser headern och den vita loggan
+  padding: $baseline;
+  justify-content: space-between;
+
+  .header__text {
+    @include fontsizeExtraLarge;
+    align-self: center;
+    color: $snow;
+  }
+
+  .header__icon--cart {
+    position: relative;
+
+    background-color: $primaryBg;
+    padding: $baseline;
+    text-decoration: none;
+    color: $snow;
+
+    .cart__count {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: #eb5757;
+      border-radius: $radius-tier-4;
+      text-align: center;
+      padding: 3px 11px;
+      margin: -11px;
+      margin-right: -11px;
+    }
+  }
+
+  @include row;
+  @include fontsizeRegular;
+}

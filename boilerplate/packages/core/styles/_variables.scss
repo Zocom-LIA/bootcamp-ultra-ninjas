@@ -3,6 +3,7 @@
 /* COLORS */
 $primaryTextColor: #222;
 $primaryBg: #ccc;
+$snow: #F4F3F1F0;
 
 /* MARGINS, PADDINGS, GAPS */
 
@@ -30,6 +31,7 @@ $gap-nano: calc($baseline / 4);
 $radius-tier-1: 8px;
 $radius-tier-2: 4px;
 $radius-tier-3: 2px;
+$radius-tier-4: 50%;
 
 $shadow-sml:
   0px 0px 1.2px rgba(0, 0, 0, 0.025),

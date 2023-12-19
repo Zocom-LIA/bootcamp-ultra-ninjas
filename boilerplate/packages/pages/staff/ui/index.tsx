@@ -1,8 +1,12 @@
+import { Header } from '@zocom/header';
 import './style.scss';
 import React from 'react'
 
 export const StaffOrders = () => {
   return (
-    <div>StaffOrders</div>
+    <div>
+    <Header />
+    <p>Kitchen orders</p>
+  </div>
   )
 }
