@@ -5,6 +5,8 @@ import { useState } from 'react';
 import { Button } from '@zocom/button';
 import { useData, ChuckNorrisResponse } from '..';
 
+import {Header} from '@zocom/header';
+
 export const LandingPage = () => {
 
     const [quote, setQuote] = useState<ChuckNorrisResponse|null>(null);
@@ -20,6 +22,7 @@ export const LandingPage = () => {
     <main className="landing-page">
         <h1 className='quote'>{quote?.value}</h1>
         <Button onClick={() => handleFetchQuote()}>Fetch a quote!</Button>
+        <Header />
     </main>
     )
 }

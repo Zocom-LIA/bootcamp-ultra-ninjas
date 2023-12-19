@@ -4,6 +4,12 @@ import {
   } from "react-router-dom";
   
   import { LandingPage } from "@zocom/landing-page";
+  import { Login } from "@zocom/login";
+  import { Order } from "@zocom/order";
+  import { Menu } from "@zocom/menu";
+  import { Receipt } from "@zocom/receipt";
+  import { Eta } from "@zocom/eta";
+  import { StaffOrders } from "@zocom/staff-orders";
   
   const router = createBrowserRouter([
     {
@@ -12,27 +18,27 @@ import {
     },
     {
       path: "/login",
-      element: ,
+      element: <Login />
     },
     {
       path: "/menu",
-      element: ,
+      element: <Menu />,
     },
     {
       path: "/order",
-      element: ,
+      element: <Order />,
     },
     {
       path: "/order/eta",
-      element: ,
+      element: <Eta />,
     },
     {
       path: "/order/receipt",
-      element: ,
+      element: <Receipt />,
     },
     {
       path: "/staff/orders",
-      element: ,
+      element: <StaffOrders />,
     },
     {
       path: "*",
