@@ -9,27 +9,24 @@
   .header__text {
     @include fontsizeExtraLarge;
     align-self: center;
-    color: $snow;
+    color: $colorSnow;
   }
 
   .header__icon--cart {
     position: relative;
-
     background-color: $primaryBg;
     padding: $baseline;
     text-decoration: none;
-    color: $snow;
+    color: $colorSnow;
 
     .cart__count {
       position: absolute;
       top: 0;
       right: 0;
-      background-color: #eb5757;
-      border-radius: $radius-tier-4;
-      text-align: center;
-      padding: 3px 11px;
+      background-color: $colorRed;
       margin: -11px;
       margin-right: -11px;
+      @include circle;
     }
   }
 

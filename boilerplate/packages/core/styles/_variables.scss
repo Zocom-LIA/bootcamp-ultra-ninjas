@@ -3,7 +3,10 @@
 /* COLORS */
 $primaryTextColor: #222;
 $primaryBg: #ccc;
-$snow: #F4F3F1F0;
+$colorSnow: #F4F3F1F0;
+$colorGray: #3531313D;
+$colorRed: #eb5757;
+$colorCoal: #353131;
 
 /* MARGINS, PADDINGS, GAPS */
 
@@ -77,4 +80,14 @@ $tabletBreakpoint: 640px;
   display: flex;
   flex-direction: row;
   gap: $gap;
+}
+
+@mixin circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: $radius-tier-4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

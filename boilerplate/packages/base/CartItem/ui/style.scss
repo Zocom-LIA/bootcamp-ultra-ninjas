@@ -1,0 +1,34 @@
+@use "@zocom/styles" as *;
+
+// change font, fira-sans?
+
+.cart-item {
+  // light grey border bottomn only
+  border-bottom: 1px solid $colorGray;
+  padding-bottom: $baseline;
+  margin: $margin-sml;
+
+  .cart-item__details {
+    text-transform: uppercase;
+    font-weight: 700;
+    padding-bottom: $padding-sml;
+    @include row;
+    @include fontsizeLarge;
+
+    .cart-item__divider {
+      font-weight: 300;
+    }
+  }
+
+  .cart-item__amount {
+    align-items: center;
+    @include row;
+
+    .cart-item__btn {
+      background-color: $colorGray;
+      font-weight: 200;
+      font-size: 30px;
+      @include circle;
+    }
+  }
+}
