@@ -1,0 +1,10 @@
+@use "@zocom/styles" as *;
+
+body {
+    background-color: $kitchenOrderBg;
+}
+
+.orderView {
+   @include row;
+   justify-content: center;
+}
