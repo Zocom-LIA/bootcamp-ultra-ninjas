@@ -1,0 +1,38 @@
+@use "@zocom/styles" as *;
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    
+
+.ingredients-list {
+
+        display:  flex;
+        flex-direction: row;
+        gap: 0.5em;
+      }
+    
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  
+  background-color: gray;
+  color: azure;
+  padding: 1rem;
+
+  .menu_h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+   
+  }
+
+  .menu_h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+  }
+}
+
+
+  
