@@ -2,7 +2,7 @@
 
 .header {
   width: 100%;
-  background-color: rgb(92, 172, 145); // temporary så man ser headern och den vita loggan
+  background-color: rgb(92, 172, 145); // temporary så man ser headern och den vita loggan, ändra till colorAsh sen
   padding: $baseline;
   justify-content: space-between;
 
@@ -14,7 +14,7 @@
 
   .header__icon--cart {
     position: relative;
-    background-color: $primaryBg;
+    background-color: $colorAsh;
     padding: $baseline;
     text-decoration: none;
     color: $colorSnow;
@@ -23,10 +23,14 @@
       position: absolute;
       top: 0;
       right: 0;
-      background-color: $colorRed;
+      background-color: $colorAlert;
       margin: -11px;
       margin-right: -11px;
       @include circle;
+    }
+
+    .hidden {
+      display: none;
     }
   }
 

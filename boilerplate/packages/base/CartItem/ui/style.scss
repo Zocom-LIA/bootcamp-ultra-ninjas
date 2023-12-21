@@ -1,9 +1,6 @@
 @use "@zocom/styles" as *;
 
-// change font, fira-sans?
-
 .cart-item {
-  // light grey border bottomn only
   border-bottom: 1px solid $colorGray;
   padding-bottom: $baseline;
   margin: $margin-sml;
@@ -12,16 +9,25 @@
     text-transform: uppercase;
     font-weight: 700;
     padding-bottom: $padding-sml;
+    color: $colorCoal;
     @include row;
     @include fontsizeLarge;
 
     .cart-item__divider {
       font-weight: 300;
+      width: 100%;
+      border-bottom: 2px dotted black;
+      margin-bottom: 6px;
+    }
+
+    .cart-item__price {
+      white-space: nowrap;
     }
   }
 
   .cart-item__amount {
     align-items: center;
+    color: $colorCoal;
     @include row;
 
     .cart-item__btn {
