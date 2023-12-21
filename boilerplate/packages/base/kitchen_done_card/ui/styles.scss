@@ -3,8 +3,30 @@
 
 .kitchen-done-card-wrapper {
     background-color: #dbfbf0;
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: $padding-huge;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $baseline;
+    border-radius: $radius-tier-2;
+    box-shadow: $shadow-medium;
 }
 
 .h2-done {
     color: #eeee;
+    color: var(--ash, #EEE);
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: 1.92px;
+    text-transform: uppercase;
+}
+
+.order-number {
+
 }

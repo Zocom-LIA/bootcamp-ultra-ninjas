@@ -14,7 +14,7 @@ export const Kitchen_done_card = () => {
     <>
         <h2 className='h2-done'>DONE --------</h2>
         <article className='kitchen-done-card-wrapper'>
-            <h1>#ordernummer</h1>
+            <h1>#4kjwsdf234k</h1>
             <section>
                 <p>mat + pris</p>
                 <p>totala summan</p>

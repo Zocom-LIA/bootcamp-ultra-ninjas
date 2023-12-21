@@ -1,10 +1,27 @@
 @use "@zocom/styles" as *;
 
 body {
-    background-color: $kitchenOrderBg;
+    background-color: $kitchenBgColor;
 }
 
 .orderView {
    @include row;
    justify-content: center;
+   @include fontsizeRegular;
+}
+
+.h2-ongoing {
+    display: flex;
+    color: var(--ash, #EEE);
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 33.6px */
+    letter-spacing: 1.92px;
+    text-transform: uppercase;
+}
+
+.ongoing-title {
+    display: block;
 }
