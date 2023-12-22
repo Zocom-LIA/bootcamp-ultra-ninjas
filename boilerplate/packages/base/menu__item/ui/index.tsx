@@ -3,6 +3,40 @@
 import React, { useEffect, useState } from 'react';
 import { Header } from "@zocom/header";
 import "./style.scss";
+import { ReactNode } from 'react';
+import { StyleTypes } from '@zocom/types';
+import menuData from './../../../../../data/menu.json';
+
+
+
+/* Local Component Types */
+export enum ButtonType {
+  'REGULAR' = 'regular',
+  'STRETCH' = 'stretch'
+}
+
+/* Component Props */
+type ButtonProps = {
+  children: ReactNode | ReactNode[];
+  style?: StyleTypes;
+  type?: ButtonType; 
+  onClick: () => void;
+}
+
+
+/* Component */
+const Button = ({ 
+  children, 
+  type = ButtonType.REGULAR, // default value
+  style = StyleTypes.DEFAULT, // default value
+  onClick
+}: ButtonProps) => {
+  return (
+    <button className={`button__${type}--${style}`} onClick={() => onClick()}>{children}</button>
+  );
+}
+
+
 
 interface MenuItemData {
   name: string;
@@ -17,20 +51,39 @@ interface Menu {
 }
 
 const renderMenuItem = (item: MenuItemData, index: number): JSX.Element => {
-    return React.createElement(
-      'div',
-      { key: index, className: 'menu-item' },
-      <h2>{item.name}</h2>,
-      <p>{item.desc}</p>,
-      item.ingredients && (
+
+  const handleClick = () => {
+    // Add your desired action here
+    console.log(`Clicked on ${item.name}`);
+  };
+
+  return (
+    <div key={index} className="menu-item" onClick={handleClick}>
+      <h2>{item.name}</h2>
+      <p>{item.desc}</p>
+      {item.ingredients && (
         <ul className="ingredients-list">
-          
           {item.ingredients.map((ingredient, ingredientIndex) => (
             <li key={ingredientIndex}>{ingredient}</li>
           ))}
         </ul>
-      ),
+      )}
       <p>Price: {item.price} SEK</p>
+    </div>
+  );
+};
+
+  const renderDipButton = (item: MenuItemData, index: number): JSX.Element => {
+    const handleClick = () => {
+      // Add your desired action here
+      console.log(`Clicked on ${item.name}`);
+    };
+  
+    return (
+      <Button key={index} type={ButtonType.REGULAR} style={StyleTypes.DEFAULT} onClick={handleClick}>
+        <h2>{item.name}</h2>
+        
+      </Button>
     );
   };
   
@@ -39,47 +92,10 @@ const MenuComponent = () => {
   const [menu, setMenu] = useState<Menu | null>(null);
 
   useEffect(() => {
-    // Mock data for menu
-    const mockMenuData: Menu = {
-      wontons: [
-        {
-          name: "Karlstad",
-          desc: "En god friterad wonton med smaker från de värmländska skogarna.",
-          ingredients: ["kantarell", "scharlottenlök", "morot", "bladpersilja"],
-          price: 9,
-        },
-        {
-            "name":"Bangkok",
-            "desc":"En god friterad wonton med smaker från Bangkoks gator.",
-            "ingredients":[
-               "morot",
-               "salladslök",
-               "chili",
-               "kokos",
-               "lime",
-               "koriander"
-            ],
-            "price":9
-         },
-      ],
+      setMenu(menuData);
+    }, []);
 
-      dip: [
-        {
-          name: "Sweet Chili",
-          desc: "Stark och söt dip från Thailänska höglandet.",
-          price: 19,
-        },
-        {
-            "name":"Sweet n Sour",
-            "desc":"Klassiska sötsura dipsåsen från Kina.",
-            "price":19
-         },
-        
-      ],
-    };
-
-    setMenu(mockMenuData);
-  }, []);
+   
 
   return (
     <div>
@@ -90,7 +106,9 @@ const MenuComponent = () => {
           <div>
             {menu.wontons.map(renderMenuItem)}
             <h2 className = "menu_h2">Dipsås</h2>
-            {menu.dip.map(renderMenuItem)}
+            <div className="dip-buttons-container">
+              {menu.dip.map(renderDipButton)}
+            </div>
           </div>
         )}
       </div>
