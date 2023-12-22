@@ -2,14 +2,63 @@
 
 .kitchen-ongoing-card-wrapper {
     background-color: #fbe9e9;
-}
-
-.h2-ongoing {
-    color: #eeee;
+    display: flex;
+    padding: $padding-nano;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $baseline;
+    align-self: stretch;
+    border-radius: $radius-tier-2;
+    box-shadow: $shadow-medium;
 }
 
 .redo-btn {
     background-color: #eb5757;
 }
 
+.wait-ongoing-time {
+    font-size: $base;
+    width: auto;
+    height: auto;
+}
+
+.order-number {
+    color: $coal;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 33.6px */
+    letter-spacing: 1.92px;
+    text-transform: uppercase;
+    padding: $padding-sml;
+}
+
+.list-wrapper {
+    border: 1px solid purple;
+    display: flex;
+    height: auto;
+    padding: 8px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.item {
+    color: $coal;
+    padding: $padding-sml;
+    align-items: center;
+    gap: $gap-sml;
+    text-transform: uppercase;
+    font-weight: 700;
+    gap: 4px;
+}
+
+.total-sum {
+    display: flex;
+    justify-content: end;
+}
 

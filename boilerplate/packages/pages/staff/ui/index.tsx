@@ -7,9 +7,14 @@ import { KitchenDoneCard } from '@zocom/kitchen_done_card';
 export const StaffOrders = () => {
   return (
     <section className='orderView'>
-      <section>
+      <section className='ongoing-text'>
+      <h2 className='h2-ongoing'>ongoing</h2>
+        <hr></hr>
+        <section>
         <Kitchen_ongoing_card />
+        </section>
       </section>
+      
       <section>
         <KitchenDoneCard />
       </section>
