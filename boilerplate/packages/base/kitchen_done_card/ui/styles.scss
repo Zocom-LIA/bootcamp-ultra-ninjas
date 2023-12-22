@@ -1,30 +1,19 @@
 @use "@zocom/styles" as *;
 
-.orders-done-heading {
-    @include fontsizeRegular;
-    @include row;
-    margin: $margin-large 0 $margin-large 0;
-    color: #eeee;
-    align-items: center;
-    font-weight: 700;
-
-    &__line {
-        background: rgba(241, 240, 236, 0.24);
-    }
-}
-
 .kitchen-done-card {
     background-color: #dbfbf0;
     padding: $padding-sml;
     border-radius: $radius-tier-2;
     box-shadow: $shadow-sml;
     text-transform: uppercase;
+    color: $clay;
 
     &__title {
         @include fontsizeRegular;
         padding: $padding-sml;
         text-align: center;
-        font-weight: 700;
+        font-weight: 500;
+        letter-spacing: 1.92px;
     }
 
     &__info {
@@ -56,10 +45,11 @@
     &__time {
         @include fontsizeSmall;
         @include center;
-        background-color: rgba(53, 49, 49, 0.24);
+        background-color: $shade-24-dark;
         text-transform: uppercase;
         border-radius: $radius-tier-3;
         padding: $padding-nano;
         margin: $margin-sml;
+        color: $coal;
     }
 }

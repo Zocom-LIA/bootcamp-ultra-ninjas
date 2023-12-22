@@ -4,24 +4,29 @@ body {
     background-color: $kitchenBgColor;
 }
 
-.orderView {
-   @include row;
-   justify-content: center;
-   @include fontsizeRegular;
-}
+.staff {
 
-.h2-ongoing {
-    display: flex;
-    color: var(--ash, #EEE);
-    text-align: center;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 140%; /* 33.6px */
-    letter-spacing: 1.92px;
-    text-transform: uppercase;
-}
+        @include row;
+        justify-content: center;
+        @include fontsizeRegular;
 
-.ongoing-title {
-    display: block;
+    &__heading {
+        display: flex;
+        color: $ash;
+        align-items: center;
+        font-weight: 700;
+        text-transform: uppercase;
+        @include fontsizeRegular;
+        @include row;
+    }
+
+    &__line {
+        background-color: #625e5d;
+        margin: $margin-large 0 $margin-large 0;
+        text-align: center;
+    }
+
+    .ongoing-title {
+        display: block;
+    }
 }

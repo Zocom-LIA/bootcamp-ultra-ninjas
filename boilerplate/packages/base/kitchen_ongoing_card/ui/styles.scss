@@ -1,64 +1,55 @@
 @use "@zocom/styles" as *;
 
-.kitchen-ongoing-card-wrapper {
-    background-color: #fbe9e9;
-    display: flex;
-    padding: $padding-nano;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: $baseline;
-    align-self: stretch;
+.kitchen-ongoing-card {
+    background-color: $bacon;
+    padding: $padding-sml;
     border-radius: $radius-tier-2;
-    box-shadow: $shadow-medium;
-}
-
-.redo-btn {
-    background-color: #eb5757;
-}
-
-.wait-ongoing-time {
-    font-size: $base;
-    width: auto;
-    height: auto;
-}
-
-.order-number {
-    color: $coal;
-    width: 100%;
-    height: auto;
-    text-align: center;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 140%; /* 33.6px */
-    letter-spacing: 1.92px;
+    box-shadow: $shadow-sml;
     text-transform: uppercase;
-    padding: $padding-sml;
-}
-
-.list-wrapper {
-    border: 1px solid purple;
-    display: flex;
-    height: auto;
-    padding: 8px 0px;
-    flex-direction: column;
-    align-items: flex-start;
-    align-self: stretch;
-}
-
-.item {
     color: $coal;
-    padding: $padding-sml;
-    align-items: center;
-    gap: $gap-sml;
-    text-transform: uppercase;
-    font-weight: 700;
-    gap: 4px;
-}
 
-.total-sum {
-    display: flex;
-    justify-content: end;
+    &__title {
+        @include fontsizeRegular;
+        padding: $padding-sml;
+        text-align: center;
+        font-weight: 500;
+        letter-spacing: 1.92px;
+    }
+
+    &__info {
+        padding: $padding-nano;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: $padding-nano;
+    }
+
+    &__items {
+        @include row;
+        @include fontsizeSmall;
+        padding: $padding-nano;
+        font-weight: 700;
+        grid-column: span 2;
+    }
+
+    &__total {
+        @include fontsizeRegular;
+        grid-column: span 2;
+        grid-row: 2;
+        text-align: right;
+    }
+
+    &__line {
+        background: rgba(53, 49, 49, 0.24);
+    }
+
+    &__time {
+        @include fontsizeSmall;
+        @include center;
+        background-color: $shade-24-dark;
+        text-transform: uppercase;
+        border-radius: $radius-tier-3;
+        padding: $padding-nano;
+        margin: $margin-sml;
+    }
 }
 

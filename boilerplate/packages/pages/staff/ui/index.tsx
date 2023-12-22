@@ -1,21 +1,19 @@
-import { Header } from '@zocom/header';
 import './style.scss';
-import React from 'react';
-import { Kitchen_ongoing_card } from '@zocom/kitchen_ongoing_card';
+import { KitchenOngoingCard } from '@zocom/kitchen_ongoing_card';
 import { KitchenDoneCard } from '@zocom/kitchen_done_card';
 
 export const StaffOrders = () => {
   return (
-    <section className='orderView'>
-      <section className='ongoing-text'>
-      <h2 className='h2-ongoing'>ongoing</h2>
-        <hr></hr>
+    <section className='staff'>
+      <section className='staff__ongoing-text'>
+      <h2 className='staff__heading'>ongoing <hr className='staff__line'></hr></h2>
         <section>
-        <Kitchen_ongoing_card />
+        <KitchenOngoingCard />
         </section>
       </section>
       
       <section>
+      <h2 className='staff__heading'>done <hr className='staff__line'></hr></h2>
         <KitchenDoneCard />
       </section>
     </section>

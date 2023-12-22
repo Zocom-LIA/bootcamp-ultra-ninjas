@@ -1,40 +1,39 @@
 import './styles.scss';
 import menuData from './../../../../../data/menu.json';
 import { Button, ButtonType} from "@zocom/button";
-import { StyleTypes, SizeTypes } from "@zocom/types";
+import { StyleTypes } from "@zocom/types";
+//{menuData.wontons[1].name}
 
-export const Kitchen_ongoing_card = () => {
-    //{menuData.wontons[1].name}
+export const KitchenOngoingCard = () => {
 
     const handleClick = () => {
         console.log("clicked!");
-      };
+    };
 
-    return(
-    <>
-    {/* <h2 className='h2-ongoing'>ONGOING ----------</h2> */}
-        <article className='kitchen-ongoing-card-wrapper'>
-            <h1 className='order-number'>#4kjwsdf234k</h1>
+    return (
+        <>
+            <section className='kitchen-ongoing-card'>
+                <h1 className='kitchen-ongoing-card__title'>#4kjwsdf234k</h1>
+                <section className='kitchen-ongoing-card__info'>
+                    <section className='kitchen-ongoing-card__items'>
+                        <p>Karlstad .............</p>
+                        <p>3 st</p>
+                        <p>27 sek</p>
+                    </section>
+                    <section className='kitchen-ongoing-card__total'>
+                        <hr className='kitchen-ongoing-card__line' />
+                        <p>129 sek</p>
+                    </section>
+                </section>
 
-        <section className='list-wrapper'>
-            <section className='item'>
-                <p>{menuData.wontons[0].name} ................. 3 st {menuData.wontons[0].price} sek</p>
-                <p>{menuData.wontons[1].name} .................. 2 st {menuData.wontons[1].price} sek</p>
-                <hr></hr>
-                <p className='total-sum'>[total]</p>
+                <section className='kitchen-ongoing-card__time'>
+                    <p>tillagningstid 4:21</p>
+                </section>
+
+                <Button type={ButtonType.STRETCH} style={StyleTypes.DEFAULT} onClick={handleClick}>
+                    SERVERAD
+                </Button>
             </section>
-        </section>
-
-            <section>
-                <p className='wait-ongoing-time'>väntetid</p>
-            </section>
-
-
-            <Button type={ButtonType.REGULAR} style={StyleTypes.DEFAULT} onClick={handleClick}>
-                redo att serveras
-            </Button>
-
-        </article>
-    </>
+        </>
     );
 };

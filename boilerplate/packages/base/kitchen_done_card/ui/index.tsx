@@ -10,7 +10,6 @@ export const KitchenDoneCard = () => {
 
     return (
         <>
-            <h2 className='orders-done-heading'>DONE <hr className='orders-done-heading__line' /></h2>
             <section className='kitchen-done-card'>
                 <h1 className='kitchen-done-card__title'>#4kjwsdf234k</h1>
                 <section className='kitchen-done-card__info'>
