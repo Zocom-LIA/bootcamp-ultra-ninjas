@@ -1,10 +1,65 @@
 @use "@zocom/styles" as *;
 
+.orders-done-heading {
+    @include fontsizeRegular;
+    @include row;
+    margin: $margin-large 0 $margin-large 0;
+    color: #eeee;
+    align-items: center;
+    font-weight: 700;
 
-.kitchen-done-card-wrapper {
-    background-color: #dbfbf0;
+    &__line {
+        background: rgba(241, 240, 236, 0.24);
+    }
 }
 
-.h2-done {
-    color: #eeee;
+.kitchen-done-card {
+    background-color: #dbfbf0;
+    padding: $padding-sml;
+    border-radius: $radius-tier-2;
+    box-shadow: $shadow-sml;
+    text-transform: uppercase;
+
+    &__title {
+        @include fontsizeRegular;
+        padding: $padding-sml;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    &__info {
+        padding: $padding-nano;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: $padding-nano;
+    }
+
+    &__items {
+        @include row;
+        @include fontsizeSmall;
+        padding: $padding-nano;
+        font-weight: 700;
+        grid-column: span 2;
+    }
+
+    &__total {
+        @include fontsizeRegular;
+        grid-column: span 2;
+        grid-row: 2;
+        text-align: right;
+    }
+
+    &__line {
+        background: rgba(53, 49, 49, 0.24);
+    }
+
+    &__time {
+        @include fontsizeSmall;
+        @include center;
+        background-color: rgba(53, 49, 49, 0.24);
+        text-transform: uppercase;
+        border-radius: $radius-tier-3;
+        padding: $padding-nano;
+        margin: $margin-sml;
+    }
 }

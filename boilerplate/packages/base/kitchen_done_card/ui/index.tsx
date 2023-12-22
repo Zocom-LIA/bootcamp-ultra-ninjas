@@ -2,33 +2,37 @@ import { StyleTypes } from '@zocom/types';
 import './styles.scss';
 import { Button, ButtonType } from '@zocom/button';
 
-
-export const Kitchen_done_card = () => {
-    //{menuData.wontons[1].name}
+export const KitchenDoneCard = () => {
 
     const handleClick = () => {
         console.log("clicked!");
-      };
+    };
 
-    return(
-    <>
-        <h2 className='h2-done'>DONE --------</h2>
-        <article className='kitchen-done-card-wrapper'>
-            <h1>#ordernummer</h1>
-            <section>
-                <p>mat + pris</p>
-                <p>totala summan</p>
+    return (
+        <>
+            <h2 className='orders-done-heading'>DONE <hr className='orders-done-heading__line' /></h2>
+            <section className='kitchen-done-card'>
+                <h1 className='kitchen-done-card__title'>#4kjwsdf234k</h1>
+                <section className='kitchen-done-card__info'>
+                    <section className='kitchen-done-card__items'>
+                        <p>Karlstad .............</p>
+                        <p>3 st</p>
+                        <p>27 sek</p>
+                    </section>
+                    <section className='kitchen-done-card__total'>
+                        <hr className='kitchen-done-card__line' />
+                        <p>129 sek</p>
+                    </section>
+                </section>
+
+                <section className='kitchen-done-card__time'>
+                    <p>tillagningstid 4:21</p>
+                </section>
+
+                <Button type={ButtonType.STRETCH} style={StyleTypes.DEFAULT} onClick={handleClick}>
+                    SERVERAD
+                </Button>
             </section>
-
-            <section>
-                <p className='wait-order-time'>tillagningstid</p>
-            </section>
-
-            <Button type={ButtonType.REGULAR} style={StyleTypes.DEFAULT} onClick={handleClick}>
-                serverad
-            </Button>
-
-        </article>
-    </>
+        </>
     );
 };
