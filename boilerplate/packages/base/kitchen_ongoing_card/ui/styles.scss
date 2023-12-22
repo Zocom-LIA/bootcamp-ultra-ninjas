@@ -36,6 +36,7 @@
         grid-column: span 2;
         grid-row: 2;
         text-align: right;
+        font-weight: 700;
     }
 
     &__line {
@@ -49,7 +50,15 @@
         text-transform: uppercase;
         border-radius: $radius-tier-3;
         padding: $padding-nano;
-        margin: $margin-sml;
+        margin: 0 0 $margin-sml 0;
     }
+
+    .button__stretch--default {
+        background-color: $alert;
+        color: $snow;
+        text-transform: uppercase;
+        padding: $padding-sml;
+        border-radius: $radius-tier-2;
+      }
 }
 

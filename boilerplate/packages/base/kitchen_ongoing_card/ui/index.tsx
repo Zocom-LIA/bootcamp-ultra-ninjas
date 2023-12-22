@@ -31,7 +31,7 @@ export const KitchenOngoingCard = () => {
                 </section>
 
                 <Button type={ButtonType.STRETCH} style={StyleTypes.DEFAULT} onClick={handleClick}>
-                    SERVERAD
+                    redo att serveras
                 </Button>
             </section>
         </>

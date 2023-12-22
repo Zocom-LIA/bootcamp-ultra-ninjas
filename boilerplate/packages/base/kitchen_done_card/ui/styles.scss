@@ -36,6 +36,7 @@
         grid-column: span 2;
         grid-row: 2;
         text-align: right;
+        font-weight: 700;
     }
 
     &__line {
@@ -51,5 +52,14 @@
         padding: $padding-nano;
         margin: $margin-sml;
         color: $coal;
+        margin: 0 0 $margin-sml 0;
     }
+
+    .button__stretch--default {
+        background-color: $dark-mint;
+        color: $snow;
+        text-transform: uppercase;
+        padding: $padding-sml;
+        border-radius: $radius-tier-2;
+      }
 }
