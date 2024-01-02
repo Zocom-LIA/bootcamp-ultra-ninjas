@@ -9,7 +9,7 @@
   .header__text {
     @include fontsizeExtraLarge;
     align-self: center;
-    color: $snow;
+    color: $colorSnow;
   }
 
   .header__icon--cart {
@@ -18,7 +18,7 @@
     background-color: $primaryBg;
     padding: $baseline;
     text-decoration: none;
-    color: $snow;
+    color: $colorSnow;
 
     .cart__count {
       position: absolute;

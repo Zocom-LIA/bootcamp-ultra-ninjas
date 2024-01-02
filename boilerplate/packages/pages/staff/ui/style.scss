@@ -1,7 +1,7 @@
 @use "@zocom/styles" as *;
 
 body {
-    background-color: $kitchenBgColor;
+    background-color: $colorCoal;
 }
 
 .staff {
@@ -12,7 +12,7 @@ body {
 
     &__heading {
         display: flex;
-        color: $ash;
+        color: $colorAsh;
         align-items: center;
         font-weight: 700;
         letter-spacing: 0.12rem;
@@ -22,7 +22,7 @@ body {
     }
 
     &__line {
-        background-color: #625e5d;
+        background-color: $colorLightGray;
         margin: $margin-large 0 $margin-large 0;
         text-align: center;
     }
