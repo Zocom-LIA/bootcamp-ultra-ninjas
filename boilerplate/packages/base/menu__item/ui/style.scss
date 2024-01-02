@@ -9,7 +9,7 @@
   
    background:$colorClay;
 
-   color: $snow;
+   color: $colorSnow;
    text-shadow: #3531313d 2.5px 1px 1px;
    padding: $baseline;
 
@@ -63,7 +63,7 @@
 
     .button__regular--default {
       background-color: $colorLightGray;
-      color:$snow ;
+      color:$colorSnow ;
       text-shadow: #3531313d 2.5px 1px 1px;
 
       &:hover{
