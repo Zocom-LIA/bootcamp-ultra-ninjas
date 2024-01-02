@@ -14,11 +14,11 @@ provider:
     eu-north-1
 
 functions:
-  - ${file(./functions.yml)}
+  - ${file(./functions/functions.yml)}
 
 resources:
   Resources:
-    YYGS_Users:
+    YYGSUsers:
       Type: AWS::DynamoDB::Table
       Properties:
         TableName: YYGS_Users
@@ -29,7 +29,7 @@ resources:
         KeySchema:
           - AttributeName: id
             KeyType: HASH
-    YYGS_Menu:
+    YYGSMenu:
       Type: AWS::DynamoDB::Table
       Properties:
         TableName: YYGS_Menu
@@ -40,7 +40,7 @@ resources:
         KeySchema:
           - AttributeName: name
             KeyType: HASH
-    YYGS_Orders:
+    YYGSOrders:
       Type: AWS::DynamoDB::Table
       Properties:
         TableName: YYGS_Orders
