@@ -22,11 +22,7 @@ functions:
 
 resources:
   Resources:
-<<<<<<< Updated upstream
-    users:
-=======
     YYGSUsers:
->>>>>>> Stashed changes
       Type: AWS::DynamoDB::Table
       Properties:
         TableName: YYGS_Users
@@ -37,11 +33,7 @@ resources:
         KeySchema:
           - AttributeName: id
             KeyType: HASH
-<<<<<<< Updated upstream
-    menu:
-=======
     YYGSMenu:
->>>>>>> Stashed changes
       Type: AWS::DynamoDB::Table
       Properties:
         TableName: YYGS_Menu
@@ -52,11 +44,7 @@ resources:
         KeySchema:
           - AttributeName: name
             KeyType: HASH
-<<<<<<< Updated upstream
-    orders:
-=======
     YYGSOrders:
->>>>>>> Stashed changes
       Type: AWS::DynamoDB::Table
       Properties:
         TableName: YYGS_Orders
