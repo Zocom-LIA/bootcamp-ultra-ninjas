@@ -15,6 +15,18 @@ $colorCoal: #353131;
 $colorGray: #3531313d; // aka shade-24-dark
 $colorLightGray: #f1f0ec3d; // aka shade-24-light
 
+$colorBacon: #fbe9e9;
+$colorSnow: #f4f3f1f0;
+$colorAsh: #eeeeee;
+$colorAlert: #eb5757;
+$colorMint: #dbfbf0;
+$colorDarkMint: #489078;
+$colorClay: #605858;
+$colorCoal: #353131;
+$colorGray: #3531313d; // aka shade-24-dark
+$colorLightGray: #f1f0ec3d; // aka shade-24-light
+
+
 /* MARGINS, PADDINGS, GAPS */
 
 $baseline: 16px;
@@ -74,13 +86,9 @@ $tabletBreakpoint: 640px;
   flex-direction: row;
   gap: $gap;
 }
-
-@mixin circle {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  border-radius: $radius-tier-4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $gap;
 }
+
