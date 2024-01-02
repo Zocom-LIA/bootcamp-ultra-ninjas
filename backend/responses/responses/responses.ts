@@ -1,4 +1,4 @@
-import { MenuItem } from '@zocom/interfaces';
+import { MenuItem } from "@zocom/interfaces";
 
 async function sendResponse(statusCode:number, body:Array<MenuItem>, message?:string) {
 

@@ -12,10 +12,6 @@ provider:
     role: arn:aws:iam::119763079540:role/test
   region:
     eu-north-1
-  environment:
-    DYNAMODB_USER_TABLE: ${self-service}-YYGS_Users-${sls:stage}
-    DYNAMODB_USER_TABLE: ${self-service}-YYGS_Menu-${sls:stage}
-    DYNAMODB_USER_TABLE: ${self-service}-YYGS_Orders-${sls:stage}
 
 functions:
   - ${file(./functions/functions.yml)}
