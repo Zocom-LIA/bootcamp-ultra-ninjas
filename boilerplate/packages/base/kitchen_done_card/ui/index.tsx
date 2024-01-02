@@ -14,7 +14,8 @@ export const KitchenDoneCard = () => {
                 <h1 className='kitchen-done-card__title'>#4kjwsdf234k</h1>
                 <section className='kitchen-done-card__info'>
                     <section className='kitchen-done-card__items'>
-                        <p>Karlstad .............</p>
+                        <p>Karlstad</p>
+                        <p className='kitchen-done-card__dots'></p>
                         <p>3 st</p>
                         <p>27 sek</p>
                     </section>

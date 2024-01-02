@@ -5,16 +5,17 @@ body {
 }
 
 .staff {
-
         @include row;
-        justify-content: center;
         @include fontsizeRegular;
+        max-width: 35rem;
+        margin: 0 auto;
 
     &__heading {
         display: flex;
         color: $ash;
         align-items: center;
         font-weight: 700;
+        letter-spacing: 0.12rem;
         text-transform: uppercase;
         @include fontsizeRegular;
         @include row;
@@ -26,7 +27,11 @@ body {
         text-align: center;
     }
 
-    .ongoing-title {
-        display: block;
+    &__ongoing {
+        flex: 1;
+    }
+
+    &__done {
+        flex: 1;
     }
 }

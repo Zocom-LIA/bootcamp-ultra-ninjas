@@ -1,7 +1,7 @@
 @use "@zocom/styles" as *;
 
 .kitchen-done-card {
-    background-color: #dbfbf0;
+    background-color: $lightMint;
     padding: $padding-sml;
     border-radius: $radius-tier-2;
     box-shadow: $shadow-sml;
@@ -13,7 +13,7 @@
         padding: $padding-sml;
         text-align: center;
         font-weight: 500;
-        letter-spacing: 1.92px;
+        letter-spacing: 0.12rem;
     }
 
     &__info {
@@ -23,12 +23,18 @@
         grid-gap: $padding-nano;
     }
 
+
     &__items {
-        @include row;
         @include fontsizeSmall;
-        padding: $padding-nano;
+        display: flex;
+        grid-column: auto / span 2;
+        padding: $padding-nano 0;
         font-weight: 700;
-        grid-column: span 2;
+    }
+
+    &__dots {
+        flex: 1 !important;
+        border-bottom: dashed 1px;
     }
 
     &__total {
@@ -40,18 +46,17 @@
     }
 
     &__line {
-        background: rgba(53, 49, 49, 0.24);
+        background: $shade-24-dark;
     }
 
     &__time {
         @include fontsizeSmall;
         @include center;
         background-color: $shade-24-dark;
+        color: $coal;
         text-transform: uppercase;
         border-radius: $radius-tier-3;
         padding: $padding-nano;
-        margin: $margin-sml;
-        color: $coal;
         margin: 0 0 $margin-sml 0;
     }
 
@@ -62,4 +67,9 @@
         padding: $padding-sml;
         border-radius: $radius-tier-2;
       }
+}
+
+
+.kitchen-done-card__items p:last-child {
+    padding-left: 1.5rem;
 }
