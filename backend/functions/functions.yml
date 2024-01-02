@@ -1,0 +1,48 @@
+getMenu:
+  handler: getMenu.handler
+  events: 
+    - httpApi:
+        path: /menu
+        method: GET
+
+newOrder:
+  handler: newOrder.handler
+  events:
+    - httpApi:
+        path: /order
+        method: POST
+
+removeOrder:
+  handler: removeOrder.handler
+  events:
+    - httpApi:
+        path: /order/delete/{orderId}
+        method: DELETE
+
+getUser:
+  handler: getUser.handler
+  events:
+    - httpApi:
+        path: /user/{userId}
+        method: GET
+
+registerUser:
+  handler: newUser.handler
+  events:
+    - httpApi:
+        path: /user/register
+        method: POST
+
+editUser:
+  handler: editUser.handler
+  events:
+    - httpApi:
+        path: /user/{userId}
+        method: PUT
+
+deleteUser:
+  handler: deleteUser.handler
+  events:
+    - httpApi:
+        path: /user/{userId}
+        method: DELETE
