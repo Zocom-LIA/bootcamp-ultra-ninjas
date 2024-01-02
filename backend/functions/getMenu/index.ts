@@ -1,6 +1,6 @@
 import { sendResponse } from '@zocom/responses';
 
-module.exports.handler = async (event) => {
+module.exports.handler = async (event, context) => {
     
     return {
       statusCode: 200,
@@ -11,5 +11,4 @@ module.exports.handler = async (event) => {
         }
       )
     };
-  };
-  
+};

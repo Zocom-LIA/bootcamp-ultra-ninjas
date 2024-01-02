@@ -12,17 +12,13 @@ provider:
     role: arn:aws:iam::119763079540:role/test
   region:
     eu-north-1
-  environment:
-    DYNAMODB_USER_TABLE: ${self-service}-YYGS_Users-${sls:stage}
-    DYNAMODB_USER_TABLE: ${self-service}-YYGS_Menu-${sls:stage}
-    DYNAMODB_USER_TABLE: ${self-service}-YYGS_Orders-${sls:stage}
 
 functions:
   - ${file(./functions.yml)}
 
 resources:
   Resources:
-    users:
+    YYGS_Users:
       Type: AWS::DynamoDB::Table
       Properties:
         TableName: YYGS_Users
@@ -33,7 +29,7 @@ resources:
         KeySchema:
           - AttributeName: id
             KeyType: HASH
-    menu:
+    YYGS_Menu:
       Type: AWS::DynamoDB::Table
       Properties:
         TableName: YYGS_Menu
@@ -44,7 +40,7 @@ resources:
         KeySchema:
           - AttributeName: name
             KeyType: HASH
-    orders:
+    YYGS_Orders:
       Type: AWS::DynamoDB::Table
       Properties:
         TableName: YYGS_Orders

@@ -1,48 +1,55 @@
+deleteUser:
+  handler: deleteUser/index.handler
+  events:
+    - httpApi:
+        path: /api/user/{userId}
+        method: DELETE
+
+editUser:
+  handler: editUser/index.handler
+  events:
+    - httpApi:
+        path: /api/user/{userId}
+        method: PUT
+
 getMenu:
-  handler: getMenu.handler
+  handler: getMenu/index.handler
   events: 
     - httpApi:
-        path: /menu
+        path: /api/menu
+        method: GET
+
+getUser:
+  handler: getUser/index.handler
+  events:
+    - httpApi:
+        path: /api/user/{userId}
         method: GET
 
 newOrder:
-  handler: newOrder.handler
+  handler: newOrder/index.handler
   events:
     - httpApi:
-        path: /order
+        path: /api/order
+        method: POST
+
+postMenuItem:
+  handler: postMenuItem/index.handler
+  events:
+    - httpApi:
+        path: /api/newmenuitem
+        method: POST
+
+registerUser:
+  handler: registerUser/index.handler
+  events:
+    - httpApi:
+        path: /api/user/register
         method: POST
 
 removeOrder:
-  handler: removeOrder.handler
+  handler: removeOrder/index.handler
   events:
     - httpApi:
-        path: /order/delete/{orderId}
-        method: DELETE
-
-getUser:
-  handler: getUser.handler
-  events:
-    - httpApi:
-        path: /user/{userId}
-        method: GET
-
-registerUser:
-  handler: newUser.handler
-  events:
-    - httpApi:
-        path: /user/register
-        method: POST
-
-editUser:
-  handler: editUser.handler
-  events:
-    - httpApi:
-        path: /user/{userId}
-        method: PUT
-
-deleteUser:
-  handler: deleteUser.handler
-  events:
-    - httpApi:
-        path: /user/{userId}
+        path: /api/order/delete/{orderId}
         method: DELETE
