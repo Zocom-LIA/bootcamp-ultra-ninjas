@@ -1,6 +1,7 @@
+@use "@zocom/styles" as *;
+
+
 .menuPage{
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
+  @include center;
 }
+
