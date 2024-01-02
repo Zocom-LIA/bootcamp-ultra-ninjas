@@ -1,12 +1,12 @@
 @use "@zocom/styles" as *;
 
 .kitchen-ongoing-card {
-    background-color: $bacon;
+    background-color: $colorBacon;
     padding: $padding-sml;
     border-radius: $radius-tier-2;
     box-shadow: $shadow-sml;
     text-transform: uppercase;
-    color: $coal;
+    color: $colorCoal;
 
     &__title {
         @include fontsizeRegular;
@@ -45,14 +45,14 @@
     }
 
     &__line {
-        background: $shade-24-dark;
+        background: $colorGray;
     }
 
     &__time {
         @include fontsizeSmall;
         @include center;
-        background-color: $shade-24-dark;
-        color: $coal;
+        background-color: $colorGray;
+        color: $colorCoal;
         text-transform: uppercase;
         border-radius: $radius-tier-3;
         padding: $padding-nano;
@@ -61,7 +61,7 @@
 
     .button__stretch--default {
         background-color: $alert;
-        color: $snow;
+        color: $colorSnow;
         text-transform: uppercase;
         padding: $padding-sml;
         border-radius: $radius-tier-2;

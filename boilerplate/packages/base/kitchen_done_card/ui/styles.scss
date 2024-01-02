@@ -1,12 +1,12 @@
 @use "@zocom/styles" as *;
 
 .kitchen-done-card {
-    background-color: $lightMint;
+    background-color: $colorMint;
     padding: $padding-sml;
     border-radius: $radius-tier-2;
     box-shadow: $shadow-sml;
     text-transform: uppercase;
-    color: $clay;
+    color: $colorClay;
 
     &__title {
         @include fontsizeRegular;
@@ -46,13 +46,13 @@
     }
 
     &__line {
-        background: $shade-24-dark;
+        background: $colorGray;
     }
 
     &__time {
         @include fontsizeSmall;
         @include center;
-        background-color: $shade-24-dark;
+        background-color: $colorGray;
         color: $coal;
         text-transform: uppercase;
         border-radius: $radius-tier-3;
@@ -61,8 +61,8 @@
     }
 
     .button__stretch--default {
-        background-color: $dark-mint;
-        color: $snow;
+        background-color: $colorDarkMint;
+        color: $colorSnow;
         text-transform: uppercase;
         padding: $padding-sml;
         border-radius: $radius-tier-2;
