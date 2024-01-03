@@ -59,8 +59,14 @@ const renderMenuItem = (item: MenuItemData, index: number): JSX.Element => {
 
   return (
     <div key={index} className="menu-item" onClick={handleClick}>
-    
-      <h2 className='menu_h2'>{item.name} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {'.'.repeat(40 - item.name.length)} {item.price} SEK</h2>
+      <div className='menu-item__name'>
+      <h2 className='menu_h2'>{item.name}</h2>
+      <p className="menu-item__divider"></p>
+      <div className='menu-item__price'>
+      <h2 className="menu_h2">{item.price}</h2>
+      <h2 className="menu_h2">SEK</h2>
+      </div>
+      </div>
       
       {item.ingredients && (
         <ul className="ingredients-list">
@@ -118,4 +124,3 @@ const MenuComponent = () => {
 };
 
 export  {MenuComponent};
-
