@@ -17,6 +17,14 @@
   }
 }
 
+@mixin darkBase {
+  @include regularBase();
+  text-transform: uppercase;
+  background-color: $colorCoal;
+  color: $colorSnow;
+  @include fontsizeLarge;
+}
+
 button {
   border-radius: $radius-tier-2;
 
@@ -24,6 +32,10 @@ button {
     &__regular {
       &--default {
         @include regularBase();
+      }
+
+      &--dark {
+        @include darkBase();
       }
     }
 
@@ -34,12 +46,8 @@ button {
       }
 
       &--dark {
-        @include regularBase();
         width: 100%;
-        text-transform: uppercase;
-        background-color: $colorCoal;
-        color: $colorSnow;
-        @include fontsizeLarge;
+        @include darkBase();
       }
     }
   }
