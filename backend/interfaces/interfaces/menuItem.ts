@@ -5,9 +5,4 @@ interface MenuItem {
     price: number
 }
 
-interface User {
-    name: string,
-    password: string
-}
-
-export { MenuItem, User };
+export default MenuItem;
