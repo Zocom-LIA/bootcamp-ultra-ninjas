@@ -2,13 +2,11 @@
 
 .cart-item {
   border-bottom: 1px solid $colorGray;
-  padding-bottom: $baseline;
-  margin: $margin-sml;
+  padding: $padding-sml $baseline;
 
   .cart-item__details {
     text-transform: uppercase;
     font-weight: 700;
-    padding-bottom: $padding-sml;
     color: $colorCoal;
     @include row;
     @include fontsizeLarge;
@@ -28,7 +26,12 @@
   .cart-item__amount {
     align-items: center;
     color: $colorCoal;
+    padding-top: $padding-sml;
     @include row;
+
+    .cart-item__value {
+      @include fontsizeRegularSmall;
+    }
 
     .cart-item__btn {
       background-color: $colorGray;

@@ -3,10 +3,12 @@ import { CartItem } from "@zocom/cartitem";
 import "./style.scss";
 import { useState } from "react";
 import { Button, ButtonType } from "@zocom/button";
+import { StyleTypes } from "@zocom/types";
+import { TotalPrice } from "@zocom/totalprice";
 
 interface MenuItemProps {
   id: number;
-  title: string;
+  name: string;
   price: number;
   quantity: number;
 }
@@ -18,12 +20,14 @@ interface OrderProps {
 }
 
 // change when doing real menu and not mockup
+export const mockOrder = [
+  { id: 1, name: "Pizza", price: 10, quantity: 1 },
+  { id: 2, name: "Burrito", price: 10, quantity: 1 },
+  { id: 3, name: "Spaghett", price: 20, quantity: 1 },
+];
+
 export const Order = () => {
-  const [cartItems, setCartItems] = useState<MenuItemProps[]>([
-    { id: 1, title: "Pizza", price: 10, quantity: 1 },
-    { id: 2, title: "Burrito", price: 10, quantity: 1 },
-    { id: 3, title: "Spaghett", price: 20, quantity: 1 },
-  ]);
+  const [cartItems, setCartItems] = useState<MenuItemProps[]>(mockOrder); // change for BE
 
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
   const totalQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
@@ -59,17 +63,11 @@ export const Order = () => {
       <section className="order__section">
         <ul>
           {cartItems.map((item) => (
-            <CartItem key={item.id} id={item.id} title={item.title} price={item.price} quantity={item.quantity} itemIncrease={handleIncreaseQuantity} itemDecrease={handleDecreaseQuantity} />
+            <CartItem key={item.id} id={item.id} name={item.name} price={item.price} quantity={item.quantity} showQuantityButtons={true} itemIncrease={handleIncreaseQuantity} itemDecrease={handleDecreaseQuantity} />
           ))}
         </ul>
-        <article className="order__total">
-          <article className="order__total-details">
-            <p className="order__total-text">totalt</p>
-            <p>inkl 20% moms</p>
-          </article>
-          <p className="order__total-price">{totalPrice} SEK</p>
-        </article>
-        <Button type={ButtonType.STRETCH} onClick={handlePurchaseClick}>
+        <TotalPrice total={totalPrice} />
+        <Button type={ButtonType.STRETCH} style={StyleTypes.DARK} onClick={handlePurchaseClick}>
           take my money!
         </Button>
       </section>
