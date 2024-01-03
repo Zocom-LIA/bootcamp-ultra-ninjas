@@ -16,17 +16,18 @@
 
 
   .menu_h1{
-    text-transform: uppercase;
     padding: $padding-sml;
    
  @include row;
     @include fontsizeExtraLarge;
+    font-weight: 600
   }
 
   
 
   .menu_h2{
     @include fontsizeLarge;
+    font-weight: 600;
    }
 
   
@@ -51,6 +52,7 @@
 
         @include row;
         gap: $gap-sml;
+        font-weight: 500
         
       }
     
