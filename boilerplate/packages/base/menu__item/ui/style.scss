@@ -9,63 +9,20 @@ $menu-breakpoint: 480px;
   color: $colorSnow;
   text-shadow: #3531313d 2.5px 1px 1px;
   padding: $baseline;
-  flex-wrap: wrap;
+  
+  font-weight: 600;
 
-<<<<<<< Updated upstream
-   color: $snow;
-   text-shadow: #3531313d 2.5px 1px 1px;
-   padding: $baseline;
-
-
-
-  .menu_h1{
-    text-transform: uppercase;
-=======
   .menu_h1 {
->>>>>>> Stashed changes
     padding: $padding-sml;
     @include fontsizeExtraLarge;
-<<<<<<< Updated upstream
-=======
-    font-weight: 600;
->>>>>>> Stashed changes
+    text-transform: uppercase;
   }
 
   .menu_h2 {
     @include fontsizeLarge;
-<<<<<<< Updated upstream
-   }
-
-  
-  .menu-item {
-    padding-top:$baseline;
-    padding-bottom: $baseline;
-    margin: $margin-sml;
-  
-    border-bottom:$colorLightGray dotted 1px ;
-   
-    
-
-    &:hover{
-      background-color:$colorLightGray;
-      cursor: pointer;
-     
-    }
-
-    
-
-  .ingredients-list {
-
-        @include row;
-        gap: $gap-sml;
-        
-      }
-    
-=======
-    font-weight: 600;
     @include row;
-
->>>>>>> Stashed changes
+    
+   }
   }
 
   .menu-item {
@@ -78,6 +35,7 @@ $menu-breakpoint: 480px;
       background-color: $colorLightGray;
       cursor: pointer;
     }
+    
     
     .menu-item__name{
       @include row;
@@ -115,11 +73,7 @@ $menu-breakpoint: 480px;
 
     .button__regular--default {
       background-color: $colorLightGray;
-<<<<<<< Updated upstream
-      color:$snow ;
-=======
       color: $colorSnow;
->>>>>>> Stashed changes
       text-shadow: #3531313d 2.5px 1px 1px;
 
       &:hover {
@@ -153,4 +107,4 @@ $menu-breakpoint: 480px;
       grid-template-columns: 1fr; 
     }
   }
-}
+
