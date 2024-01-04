@@ -1,21 +1,26 @@
 import "./style.scss";
 
 interface CartItemProps {
-  title: string;
+  name: string;
   price: number;
   id: number;
   quantity: number;
-  itemIncrease: (id: number) => void;
-  itemDecrease: (id: number) => void;
+  showQuantityButtons?: boolean;
+  itemIncrease?: (id: number) => void;
+  itemDecrease?: (id: number) => void;
 }
 
-export const CartItem = ({ title, price, id, quantity, itemIncrease, itemDecrease }: CartItemProps) => {
+export const CartItem = ({ name, price, id, quantity, showQuantityButtons, itemIncrease, itemDecrease }: CartItemProps) => {
   const handleIncrease = () => {
-    itemIncrease(id);
+    if (itemIncrease) {
+      itemIncrease(id);
+    }
   };
 
   const handleDecrease = () => {
-    itemDecrease(id);
+    if (itemDecrease) {
+      itemDecrease(id);
+    }
   };
 
   const totalPrice = price * quantity;
@@ -23,19 +28,23 @@ export const CartItem = ({ title, price, id, quantity, itemIncrease, itemDecreas
   return (
     <li className="cart-item">
       <article className="cart-item__details">
-        <p className="cart-item__title">{title}</p>
+        <p className="cart-item__name">{name}</p>
         <p className="cart-item__divider"></p>
         <p className="cart-item__price">{totalPrice} SEK</p>
       </article>
 
       <article className="cart-item__amount">
-        <button className="cart-item__btn cart-item__btn--add" onClick={handleIncrease}>
-          +
-        </button>
+        {showQuantityButtons && (
+          <button className="cart-item__btn cart-item__btn--add" onClick={handleIncrease}>
+            +
+          </button>
+        )}
         <p className="cart-item__value">{quantity} stycken</p>
-        <button className="cart-item__btn cart-item__btn--remove" onClick={handleDecrease}>
-          -
-        </button>
+        {showQuantityButtons && (
+          <button className="cart-item__btn cart-item__btn--remove" onClick={handleDecrease}>
+            -
+          </button>
+        )}
       </article>
     </li>
   );

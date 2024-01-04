@@ -1,38 +1,14 @@
 @use "@zocom/styles" as *;
 
-.order__section {
-  padding: $padding-sml;
-  width: 100%;
+.order {
   background-color: $colorAsh;
+  .order__section {
+    padding: $padding-sml;
+    width: 100%;
+    background-color: $colorAsh;
 
-  .order__total {
-    background-color: $colorGray;
-    padding: $padding $padding-large;
-    color: $colorCoal;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: $radius-tier-2;
-    @include row;
-
-    .order__total-details {
-      .order__total-text {
-        text-transform: uppercase;
-        font-weight: 700;
-        @include fontsizeLarge;
-      }
+    .button__stretch--dark {
+      margin-top: $baseline;
     }
-    .order__total-price {
-      text-transform: uppercase;
-      font-weight: 700;
-      @include fontsizeExtraLarge;
-    }
-  }
-
-  .button__stretch--default {
-    margin-top: $baseline;
-    text-transform: uppercase;
-    background-color: $colorCoal;
-    color: $colorSnow;
-    @include fontsizeLarge;
   }
 }
