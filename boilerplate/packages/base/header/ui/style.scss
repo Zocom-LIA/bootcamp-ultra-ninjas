@@ -4,7 +4,7 @@
   width: 100%;
   background-color: rgb(92, 172, 145); // temporary så man ser headern och den vita loggan, ändra till colorAsh sen
   padding: $baseline;
-  justify-content: space-between;;
+  justify-content: space-between;
 
   &.kitchen-view {
     @include fontsizeExtraLarge;
@@ -13,11 +13,11 @@
     justify-content: flex-start;
     align-items: center;
     font-weight: 700;
+    padding: 0.5rem 0;
   }
 
   .header__icon--cart {
     position: relative;
-
     background-color: $primaryBg;
     padding: $baseline;
     text-decoration: none;
