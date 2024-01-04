@@ -32,7 +32,6 @@ export const CartItem = ({ name, price, id, quantity, showQuantityButtons, itemI
         <p className="cart-item__divider"></p>
         <p className="cart-item__price">{totalPrice} SEK</p>
       </article>
-
       <article className="cart-item__amount">
         {showQuantityButtons && (
           <button className="cart-item__btn cart-item__btn--add" onClick={handleIncrease}>
