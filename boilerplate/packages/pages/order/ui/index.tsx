@@ -59,12 +59,26 @@ export const Order = () => {
             <CartItem key={item.id} id={item.id} name={item.name} price={item.price} quantity={item.quantity} showQuantityButtons={true} itemIncrease={handleIncreaseQuantity} itemDecrease={handleDecreaseQuantity} />
           ))}
         </ul>
-        <TotalPrice total={totalPrice} />
-        <Link to="/order/eta">
-          <Button type={ButtonType.STRETCH} style={StyleTypes.DARK} onClick={handlePurchaseClick}>
-            take my money!
-          </Button>
-        </Link>
+        {totalQuantity === 0 ? (
+          <article>
+            <h3 className="order__empty-text">Din varukorg är tom</h3>
+            <TotalPrice total={totalPrice} />
+            <Link to="/menu">
+              <Button type={ButtonType.STRETCH} style={StyleTypes.DARK}>
+                meny
+              </Button>
+            </Link>
+          </article>
+        ) : (
+          <article>
+            <TotalPrice total={totalPrice} />
+            <Link to="/order/eta">
+              <Button type={ButtonType.STRETCH} style={StyleTypes.DARK} onClick={handlePurchaseClick}>
+                take my money!
+              </Button>
+            </Link>
+          </article>
+        )}
       </section>
     </div>
   );

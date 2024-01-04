@@ -18,7 +18,7 @@
 
   .header__icon--cart {
     position: relative;
-    background-color: $primaryBg;
+    background-color: $colorAsh;
     padding: $baseline;
     text-decoration: none;
     color: $colorSnow;
@@ -34,6 +34,10 @@
       margin: -11px;
       margin-right: -11px;
     }
+  }
+
+  .hidden {
+    display: none;
   }
 
   @include row;
