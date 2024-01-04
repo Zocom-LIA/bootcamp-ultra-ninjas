@@ -5,9 +5,9 @@ import { Header } from '@zocom/header';
 
 export const StaffOrders = () => {
   return (
-    <>
+    <section className='staff'>
       <Header />
-      <section className='staff'>
+      <section className='staff__container'>
         <section className='staff__ongoing'>
           <h2 className='staff__heading'>ongoing <hr className='staff__line'></hr></h2>
           <KitchenOngoingCard />
@@ -18,6 +18,6 @@ export const StaffOrders = () => {
           <KitchenDoneCard />
         </section>
       </section>
-    </>
+    </section>
   );
 };
