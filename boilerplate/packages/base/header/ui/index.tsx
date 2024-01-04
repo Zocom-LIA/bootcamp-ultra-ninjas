@@ -5,7 +5,7 @@ import { useLocation, Link } from "react-router-dom";
 
 type HeaderProps = {
   showCircle?: boolean;
-  quantity?: number; // need to add for menu page
+  quantity?: number;
 };
 
 export const Header = ({ quantity, showCircle }: HeaderProps) => {
@@ -15,8 +15,6 @@ export const Header = ({ quantity, showCircle }: HeaderProps) => {
 
   const cartIconSrc: string = cartIcon;
   const logoIconSrc: string = logoIcon;
-
-  // Align kitchen view text vänster för ipad view
 
   return (
     <header className="header">

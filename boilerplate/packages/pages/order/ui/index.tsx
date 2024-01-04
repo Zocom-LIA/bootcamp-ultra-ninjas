@@ -5,29 +5,35 @@ import { useState } from "react";
 import { Button, ButtonType } from "@zocom/button";
 import { StyleTypes } from "@zocom/types";
 import { TotalPrice } from "@zocom/totalprice";
+import { MenuItemData } from "../../../base/menu__item";
 
-interface MenuItemProps {
-  id: number;
-  name: string;
-  price: number;
-  quantity: number;
-}
+// interface MenuItemProps {
+//   id: number;
+//   name: string;
+//   price: number;
+//   quantity: number;
+// }
 
 interface OrderProps {
-  cartItems: MenuItemProps[];
+  cartItems: CartMenuItem[];
   total: number;
   totalQuantity: number;
 }
 
+// extend
+export interface CartMenuItem extends MenuItemData {
+  quantity: number;
+}
+
 // change when doing real menu and not mockup
 export const mockOrder = [
-  { id: 1, name: "Pizza", price: 10, quantity: 1 },
-  { id: 2, name: "Burrito", price: 10, quantity: 1 },
-  { id: 3, name: "Spaghett", price: 20, quantity: 1 },
+  { id: 34, name: "Pizza", price: 10, quantity: 1 },
+  { id: 33, name: "Burrito", price: 10, quantity: 1 },
+  { id: 32, name: "Spaghett", price: 20, quantity: 1 },
 ];
 
 export const Order = () => {
-  const [cartItems, setCartItems] = useState<MenuItemProps[]>(mockOrder); // change for BE
+  const [cartItems, setCartItems] = useState<CartMenuItem[]>(mockOrder); // change for BE
 
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
   const totalQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
