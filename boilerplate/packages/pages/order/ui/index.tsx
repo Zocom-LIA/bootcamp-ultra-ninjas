@@ -6,13 +6,7 @@ import { Button, ButtonType } from "@zocom/button";
 import { StyleTypes } from "@zocom/types";
 import { TotalPrice } from "@zocom/totalprice";
 import { MenuItemData } from "../../../base/menu__item";
-
-// interface MenuItemProps {
-//   id: number;
-//   name: string;
-//   price: number;
-//   quantity: number;
-// }
+import { Link } from "react-router-dom";
 
 interface OrderProps {
   cartItems: CartMenuItem[];
@@ -20,17 +14,12 @@ interface OrderProps {
   totalQuantity: number;
 }
 
-// extend
-export interface CartMenuItem extends MenuItemData {
+interface CartMenuItem extends MenuItemData {
   quantity: number;
 }
 
 // change when doing real menu and not mockup
-export const mockOrder = [
-  { id: 34, name: "Pizza", price: 10, quantity: 1 },
-  { id: 33, name: "Burrito", price: 10, quantity: 1 },
-  { id: 32, name: "Spaghett", price: 20, quantity: 1 },
-];
+export const mockOrder: CartMenuItem[] = [];
 
 export const Order = () => {
   const [cartItems, setCartItems] = useState<CartMenuItem[]>(mockOrder); // change for BE
@@ -52,8 +41,6 @@ export const Order = () => {
 
   const handleDecreaseQuantity = (itemId: number) => {
     setCartItems((prevItems) => prevItems.map((item) => (item.id === itemId && item.quantity > 0 ? { ...item, quantity: item.quantity - 1 } : item)));
-
-    // If quantity = 0, remove from cart
     setCartItems((prevItems) => prevItems.filter((item) => !(item.id === itemId && item.quantity === 0)));
   };
 
@@ -73,9 +60,11 @@ export const Order = () => {
           ))}
         </ul>
         <TotalPrice total={totalPrice} />
-        <Button type={ButtonType.STRETCH} style={StyleTypes.DARK} onClick={handlePurchaseClick}>
-          take my money!
-        </Button>
+        <Link to="/order/eta">
+          <Button type={ButtonType.STRETCH} style={StyleTypes.DARK} onClick={handlePurchaseClick}>
+            take my money!
+          </Button>
+        </Link>
       </section>
     </div>
   );
