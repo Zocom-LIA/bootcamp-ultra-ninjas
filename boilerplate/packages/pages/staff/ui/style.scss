@@ -5,10 +5,14 @@ body {
 }
 
 .staff {
+    margin: $margin-large;
+
+    &__container {
         @include row;
         @include fontsizeRegular;
-        max-width: 35rem;
+        max-width: 37rem;
         margin: 0 auto;
+    }
 
     &__heading {
         display: flex;
@@ -29,9 +33,11 @@ body {
 
     &__ongoing {
         flex: 1;
+        margin-right: $margin-large;
     }
 
     &__done {
         flex: 1;
+        margin-left: $margin-large;
     }
 }

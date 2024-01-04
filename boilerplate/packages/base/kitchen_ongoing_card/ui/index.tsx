@@ -14,7 +14,7 @@ export const KitchenOngoingCard = () => {
             <section className='kitchen-ongoing-card'>
                 <h1 className='kitchen-ongoing-card__title'>#4kjwsdf234k</h1>
                 <section className='kitchen-ongoing-card__info'>
-                <section className='kitchen-ongoing-card__items'>
+                    <section className='kitchen-ongoing-card__items'>
                         <p>Karlstad</p>
                         <p className='kitchen-ongoing-card__dots'></p>
                         <p>3 st</p>
