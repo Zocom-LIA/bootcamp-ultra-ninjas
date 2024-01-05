@@ -34,10 +34,10 @@ newOrder:
         method: POST
 
 postMenuItem:
-  handler: postMenuItem/index.handler
+  handler: menu/index.handler
   events:
     - httpApi:
-        path: /api/newmenuitem
+        path: /api/menu/add
         method: POST
 
 registerUser:
