@@ -14,7 +14,7 @@ provider:
     eu-north-1
 
 functions:
-  - ${file(./functions/functions.yml)}
+  - ${file(./packages/functions/functions.yml)}
 
 resources:
   Resources:

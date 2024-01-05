@@ -1,4 +1,9 @@
 {
+  "name": "backend",
+  "type": "module",
+  "workspaces": [
+    "packages/**"
+  ],
   "scripts": {
     "test": "jest"
   },
