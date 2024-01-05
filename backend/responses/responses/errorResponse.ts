@@ -1,11 +1,11 @@
-async function errorResponse(statusCode:number, message?:string) {
+async function errorResponse(statusCode:number, body: { message?:string }) {
 
     const response = {
         statusCode: statusCode,
-        message: message
+        body: body
     }
 
-    return response;
+    return JSON.stringify(response);
 }
 
 export default errorResponse;

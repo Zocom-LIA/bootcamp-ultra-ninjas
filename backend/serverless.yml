@@ -20,6 +20,7 @@ resources:
   Resources:
     YYGSUsers:
       Type: AWS::DynamoDB::Table
+      DeletionPolicy: Delete
       Properties:
         TableName: YYGS_Users
         AttributeDefinitions:
@@ -31,6 +32,7 @@ resources:
             KeyType: HASH
     YYGSMenu:
       Type: AWS::DynamoDB::Table
+      DeletionPolicy: Retain
       Properties:
         TableName: YYGS_Menu
         AttributeDefinitions:
@@ -42,6 +44,7 @@ resources:
             KeyType: HASH
     YYGSOrders:
       Type: AWS::DynamoDB::Table
+      DeletionPolicy: Delete
       Properties:
         TableName: YYGS_Orders
         AttributeDefinitions:

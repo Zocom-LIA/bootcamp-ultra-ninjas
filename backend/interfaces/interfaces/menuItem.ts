@@ -1,7 +1,7 @@
 interface MenuItem {
     name: string,
     desc: string,
-    ingredients: Array<string>,
+    ingredients: string[],
     price: number
 }
 

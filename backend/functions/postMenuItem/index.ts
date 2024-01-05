@@ -1,13 +1,15 @@
-import { ddb } from '@zocom/services';
-import { MenuItem } from '@zocom/interfaces';
+import ddb from '@zocom/services';
+import MenuItem from '@zocom/interfaces';
+import { successResponse, errorResponse } from '@zocom/responses';
 
 exports.handler = async (event, context) => {
 
     try {
 
-        const menuItem = JSON.parse(event.body);
+        console.log("blab");
+        const menuItem:MenuItem = JSON.parse(event.body);
         await ddb.put({
-            Tablename: 'YYGSMenu',
+            TableName: 'YYGSMenu',
             Item: {
                 name: menuItem.name,
                 desc: menuItem.desc,
@@ -15,9 +17,12 @@ exports.handler = async (event, context) => {
                 price: menuItem.price
             }
         }).promise();
+        console.log("2");
+
+    return successResponse(200, { message:"Success" });
     }
     catch (error) {
 
-
+        return errorResponse(error.statusCode, { message:error.message });
     }
 }

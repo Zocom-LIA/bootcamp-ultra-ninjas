@@ -1,9 +1,11 @@
+const serverless = require('serverless');
+
 module.exports = async () => {
 
-    const serverless = new (require('serverless'))();
+    const sls = new (require('serverless'))();
 
-    await serverless.init();
-    const service = await serverless.variables.populateService();
+    await sls.init();
+    const service = await sls.variables.populateService();
     const resources = await service.resources.filter(r => Object.keys(r).includes('Resources'))[0];
 
     const tables = Object.keys(resources)

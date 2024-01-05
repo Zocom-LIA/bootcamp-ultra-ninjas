@@ -1,14 +1,13 @@
 import { MenuItem } from "@zocom/interfaces";
 
-async function successResponse(statusCode:number, body:Array<MenuItem>, message?:string) {
+async function successResponse(statusCode:number, body: { message:string, content?:MenuItem }) {//TODO: lägg till fler content typer
 
     const response = {
         statusCode: statusCode,
-        body: body,
-        message: message
+        body: body
     }
 
-    return response;
+    return JSON.stringify(response);
 }
 
 export default successResponse;
