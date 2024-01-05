@@ -1,4 +1,4 @@
-async function errorResponse(statusCode:number, message?:string) {
+export async function errorResponse(statusCode:number, message?:string) {
 
     const response = {
         statusCode: statusCode,
@@ -7,5 +7,3 @@ async function errorResponse(statusCode:number, message?:string) {
 
     return response;
 }
-
-export default errorResponse;

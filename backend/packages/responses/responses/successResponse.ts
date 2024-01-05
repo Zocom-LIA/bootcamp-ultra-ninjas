@@ -1,6 +1,6 @@
 import { MenuItem } from "@zocom/interfaces";
 
-async function successResponse(statusCode:number, body:Array<MenuItem>, message?:string) {
+export async function successResponse(statusCode:number, body:Array<MenuItem>, message?:string) {
 
     const response = {
         statusCode: statusCode,
@@ -11,4 +11,3 @@ async function successResponse(statusCode:number, body:Array<MenuItem>, message?
     return response;
 }
 
-export default successResponse;
