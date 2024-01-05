@@ -17,4 +17,4 @@ const config = {
 
 const ddb = new DocumentClient(config);
 
-module.exports = ddb
+module.exports = { ddb }

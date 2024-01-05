@@ -8,10 +8,12 @@ provider:
   runtime: nodejs18.x
   httpApi:
     name: YYGS
+  profile:
+    ${env:AWS_PROFILE}
   iam:
-    role: arn:aws:iam::119763079540:role/test
+    role: ${env:AWS_ROLE}
   region:
-    eu-north-1
+    ${env:AWS_REGION}
 
 functions:
   - ${file(./packages/functions/functions.yml)}
