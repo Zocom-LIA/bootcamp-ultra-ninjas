@@ -1,0 +1,18 @@
+@use "@zocom/styles" as *;
+
+.login{
+    border: 2px solid red;
+    background-color: aliceblue;
+    @include column;
+
+
+    .login__btns{
+       
+        
+        margin: $margin-sml;
+    
+    }
+
+    
+    
+}
