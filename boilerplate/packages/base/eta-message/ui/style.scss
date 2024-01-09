@@ -6,7 +6,7 @@
      }
      
     background-color: $colorClay;
-    //text-shadow: #3531313d 2.5px 1px 1px;
+    
     padding: $baseline;
     @include column;
     color: $colorSnow;
@@ -21,7 +21,7 @@
         padding: $padding-sml;
    
    
-    @include fontsizeExtraLarge;
+        @include fontsizeExtraLarge;
         font-weight: 600
     }
     
@@ -39,8 +39,15 @@
         width: 100%;
         margin-top: $margin-huge;
 
+        
+
+        .eta-page__linkButton{
+            width: 100%;
+        }
+
 
         .button__regular--default,
+      
         .button__stretch--default {
             background-color: $colorClay;
             border: $colorSnow 2px solid;

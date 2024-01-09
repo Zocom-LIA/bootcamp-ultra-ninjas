@@ -2,6 +2,9 @@
 
 
 .menuPage{
-  //@include center;
+  @include center;
+  background-color: $colorMintMenu;
+  background-image: url('./menu.page.background.svg');
+  background-size: cover;
 }
 

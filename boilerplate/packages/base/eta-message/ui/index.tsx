@@ -1,31 +1,10 @@
 import React, { useState } from 'react';
 import { Header } from "@zocom/header";
 import "./style.scss";
-import boxTopImage from '../../../.././../assets/boxtop 1.svg'; // Import the image
+import boxTopImage from '../../../.././../assets/boxtop 1.svg'; 
+import { Button,ButtonType } from '@zocom/button';
+import { Link } from "react-router-dom";
 
-/* Local Component Types */
-export enum ButtonType {
-  'REGULAR' = 'regular',
-  'STRETCH' = 'stretch'
-}
-
-/* Component Props */
-type ButtonProps = {
-  children: React.ReactNode | React.ReactNode[];
-  type?: ButtonType;
-  onClick: () => void;
-}
-
-/* Button Component */
-const Button = ({ 
-  children, 
-  type = ButtonType.REGULAR,
-  onClick
-}: ButtonProps) => {
-  return (
-    <button className={`button__${type}--default`} onClick={() => onClick()}>{children}</button>
-  );
-}
 
 const EtaPage = () => {
   // Mock ETA and order number (replace them with actual values later)
@@ -40,6 +19,8 @@ const EtaPage = () => {
     setOrderDone(true);
   };
 
+ 
+
   return (
     <div>
       <Header />
@@ -49,11 +30,13 @@ const EtaPage = () => {
         {orderDone ? null : <h2 className='eta-page__h2'>ETA: {mockEta}</h2>}
         <p>#{mockOrderNumber}</p>
         <div className="eta-page__buttons">
-          <Button type={ButtonType.STRETCH} onClick={handleOrderCompletion}>
-            {orderDone ? 'Beställ mer' : 'Beställ mer / Done'}
+        <Link to="/menu"className='eta-page__linkButton'>
+          <Button type={ButtonType.STRETCH}>
+            Beställ mer
           </Button>
-          <Button type={ButtonType.STRETCH} onClick={() => console.log('See Receipt clicked')}>
-            Se kvitto
+          </Link>
+          <Button type={ButtonType.STRETCH} onClick={handleOrderCompletion}>
+          {orderDone ? 'Se kvitto' : 'Se kvitto / Done'}
           </Button>
         </div>
       </div>

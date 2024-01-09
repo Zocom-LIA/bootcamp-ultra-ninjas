@@ -1,18 +1,78 @@
 @use "@zocom/styles" as *;
 
+$menu-breakpoint: 480px; 
+
+
+
 .login{
-    border: 2px solid red;
-    background-color: aliceblue;
+    background-color: $primaryBg;
+    color: $primaryTextColor;
     @include column;
+    padding: $padding-huge;
+    @include fontsizeLarge;
+    text-transform: uppercase;
+    gap: $baseline;
+    border-radius: $radius-tier-2;
+    text-shadow:$shadow-large;
+    font-weight: 500;
+    
+    
+
+    .login__h2{
+        @include fontsizeExtraLarge;
+        font-weight: 600
+        
+    }
+
+    .login__info{
+        @include row;
+    }
 
 
     .login__btns{
-       
+        @include row;
         
         margin: $margin-sml;
+
+        .button__regular--default,
+        .button__stretch--default {
+            background-color: $colorClay;
+            border: $colorSnow 2px solid;
+            color: $colorSnow;
+            text-transform: uppercase;
+            @include fontsizeRegular;
+            font-weight: 500;
+
+            &:hover{
+                background-color:$colorCoal;
+                cursor: pointer;
+                border: none;
+            }
+           
+
+            
+        }
     
     }
 
+
+    .login__image {
+          
+        max-height: 90px; 
+      }
+
+      @media only screen and (max-width: $menu-breakpoint) {
+        .login__info{
+            @include column;
+        }
+    
+        .login__btns{
+            @include column;
+        }
+    
+      }
+    
     
     
 }
+

@@ -1,13 +1,13 @@
-import { Header } from "@zocom/header";
+
 import   {LoginComponent}  from "../../../base/login/ui/index";
 import "./style.scss";
 
-import React from "react";
+//import React from "react";
 
 export const Login = () => {
   return (
-    <div>
-      <Header />
+    <div className="loginPage">
+      
       <LoginComponent/>
       
     </div>
