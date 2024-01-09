@@ -1,4 +1,7 @@
-module.exports.handler = async (event) => {
+import { successResponse } from "@zocom/responses"; '@zocom/responses';
+
+
+export const handler = async (event) => {
     
     return {
       statusCode: 200,

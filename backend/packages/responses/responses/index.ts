@@ -1,21 +1,21 @@
 import { MenuItem } from "@zocom/interfaces";
 
-export async function errorResponse(statusCode:number, body: { message?:string }) {
+export function errorResponse(statusCode:number, body: { message?:string }) {
 
     const response = {
         statusCode: statusCode,
-        body: body
+        body: JSON.stringify(body)
     }
 
-    return JSON.stringify(response);
+    return response;
 }
 
-export async function successResponse(statusCode:number, body: { message:string, content?:MenuItem }) {//TODO: lägg till fler content typer
+export function successResponse(statusCode:number, body: { message:string, content?:MenuItem }) {//TODO: lägg till fler content typer
 
     const response = {
         statusCode: statusCode,
-        body: body
+        body: JSON.stringify(body)
     }
 
-    return JSON.stringify(response);
+    return response;
 }
