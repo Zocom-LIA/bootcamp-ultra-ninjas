@@ -1,6 +1,9 @@
 service: aws
 frameworkVersion: '3'
 useDotenv: true
+configValidationMode: error
+package:
+  individually: true
 
 provider:
   stage: dev
@@ -16,7 +19,7 @@ provider:
     ${env:AWS_REGION}
 
 functions:
-  - ${file(./packages/functions/functions.yml)}
+  - ${file(./functions/functions.yml)}
 
 resources:
   Resources:
@@ -24,7 +27,7 @@ resources:
       Type: AWS::DynamoDB::Table
       DeletionPolicy: Delete
       Properties:
-        TableName: YYGS_Users
+        TableName: YYGSUsers
         AttributeDefinitions:
           - AttributeName: id
             AttributeType: S
@@ -36,7 +39,7 @@ resources:
       Type: AWS::DynamoDB::Table
       DeletionPolicy: Retain
       Properties:
-        TableName: YYGS_Menu
+        TableName: YYGSMenu
         AttributeDefinitions:
           - AttributeName: name
             AttributeType: S
@@ -48,7 +51,7 @@ resources:
       Type: AWS::DynamoDB::Table
       DeletionPolicy: Delete
       Properties:
-        TableName: YYGS_Orders
+        TableName: YYGSOrders
         AttributeDefinitions:
           - AttributeName: id
             AttributeType: S

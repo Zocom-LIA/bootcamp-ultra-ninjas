@@ -2,7 +2,7 @@ import { ddb } from '@zocom/services';
 import { MenuItem } from '@zocom/interfaces';
 import { successResponse, errorResponse } from '@zocom/responses';
 
-exports.handler = async (event, context) => {
+export const handler = async (event, context) => {
 
     try {
 
@@ -11,6 +11,7 @@ exports.handler = async (event, context) => {
             TableName: 'YYGSMenu',
             Item: {
                 name: menuItem.name,
+                id: menuItem.id,
                 desc: menuItem.desc,
                 ingredients: menuItem.ingredients,
                 price: menuItem.price
@@ -21,7 +22,6 @@ exports.handler = async (event, context) => {
     }
     catch (error) {
 
-        console.log("blab");
         return errorResponse(error.statusCode, { message:error.message });
     }
 }

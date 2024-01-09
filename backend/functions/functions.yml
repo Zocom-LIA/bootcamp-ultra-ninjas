@@ -13,7 +13,7 @@ editUser:
         method: PUT
 
 getMenu:
-  handler: getMenu/index.handler
+  handler: ./getMenu/index.handler
   events: 
     - httpApi:
         path: /api/menu
