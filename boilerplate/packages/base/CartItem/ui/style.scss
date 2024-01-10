@@ -1,8 +1,12 @@
 @use "@zocom/styles" as *;
 
 .cart-item {
-  border-bottom: 1px solid $colorGray;
+  border-bottom: 1px dotted $colorGray;
   padding: $padding-sml $baseline;
+
+  .cart-item__name {
+    white-space: nowrap;
+  }
 
   .cart-item__details {
     text-transform: uppercase;
