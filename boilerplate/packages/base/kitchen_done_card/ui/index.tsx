@@ -1,17 +1,22 @@
+import React from 'react';
 import { StyleTypes } from '@zocom/types';
 import './styles.scss';
 import { Button, ButtonType } from '@zocom/button';
 
-export const KitchenDoneCard = () => {
+interface KitchenDoneCardProps {
+    orderId: string;
+    onDeleteClick: () => void; // Define the onDeleteClick prop
+}
 
-    const handleClick = () => {
-        console.log("clicked!");
-    };
+export const KitchenDoneCard: React.FC<KitchenDoneCardProps> = ({ orderId, onDeleteClick }) => {
+
+    
+    
 
     return (
         <>
             <section className='kitchen-done-card'>
-                <h1 className='kitchen-done-card__title'>#4kjwsdf234k</h1>
+                <h1 className='kitchen-done-card__title'>#{orderId}</h1>
                 <section className='kitchen-done-card__info'>
                     <section className='kitchen-done-card__items'>
                         <p>Karlstad</p>
@@ -29,7 +34,7 @@ export const KitchenDoneCard = () => {
                     <p>tillagningstid 4:21</p>
                 </section>
 
-                <Button type={ButtonType.STRETCH} style={StyleTypes.DEFAULT} onClick={handleClick}>
+                <Button type={ButtonType.STRETCH} style={StyleTypes.DEFAULT} onClick={onDeleteClick}>
                     SERVERAD
                 </Button>
             </section>
