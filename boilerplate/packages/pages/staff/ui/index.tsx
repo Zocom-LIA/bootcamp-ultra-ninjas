@@ -37,6 +37,8 @@ export const StaffOrders: React.FC = () => {
     const handleDeleteClick = (orderId: string) => {
       const updatedDoneOrders = doneOrders.filter((order) => order.id !== orderId);
       setDoneOrders(updatedDoneOrders);
+      console.log('serverat clicked');
+      
   };
 
     return (
