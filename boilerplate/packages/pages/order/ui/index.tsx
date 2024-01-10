@@ -60,17 +60,19 @@ export const Order = () => {
           ))}
         </ul>
         {totalQuantity === 0 ? (
-          <article>
+          <section>
             <h3 className="order__empty-text">Din varukorg är tom</h3>
-            <TotalPrice total={totalPrice} />
-            <Link to="/menu">
-              <Button type={ButtonType.STRETCH} style={StyleTypes.DARK}>
-                meny
-              </Button>
-            </Link>
-          </article>
+            <article className="order__empty">
+              <TotalPrice total={totalPrice} />
+              <Link to="/menu">
+                <Button type={ButtonType.STRETCH} style={StyleTypes.DARK}>
+                  meny
+                </Button>
+              </Link>
+            </article>
+          </section>
         ) : (
-          <article>
+          <article className="order__total">
             <TotalPrice total={totalPrice} />
             <Link to="/order/eta">
               <Button type={ButtonType.STRETCH} style={StyleTypes.DARK} onClick={handlePurchaseClick}>

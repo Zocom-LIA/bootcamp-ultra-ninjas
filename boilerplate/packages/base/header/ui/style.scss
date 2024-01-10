@@ -16,6 +16,10 @@
     padding: 0.5rem 0;
   }
 
+  &.order-page {
+    background-color: $colorAsh;
+  }
+
   .header__icon--cart {
     position: relative;
     background-color: $colorAsh;

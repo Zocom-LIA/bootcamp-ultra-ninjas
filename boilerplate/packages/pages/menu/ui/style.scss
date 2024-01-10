@@ -1,10 +1,15 @@
 @use "@zocom/styles" as *;
 
-
-.menuPage{
-  @include center;
-  background-color: $colorMintMenu;
-  background-image: url('./menu.page.background.svg');
-  background-size: cover;
+.menuPage {
+  background-image: url("./../../../../../assets/menu-page-bg.svg" );
+  background-color: $colorMint;
+  height: 100vh;
+  width: 100vw;
 }
 
+@media only screen and (max-width: $mobileBreakpoint) {
+  .menuPage {
+    min-height: 100vh;
+    min-width: 100vw;
+  }
+}

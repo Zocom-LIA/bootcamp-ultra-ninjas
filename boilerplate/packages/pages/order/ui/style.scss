@@ -1,8 +1,9 @@
 @use "@zocom/styles" as *;
 
 .order {
+  height: 100vh;
   background-color: $colorAsh;
-  .order__section {
+  &__section {
     padding: $padding-sml;
     width: 100%;
     background-color: $colorAsh;
@@ -17,5 +18,13 @@
     .button__stretch--dark {
       margin-top: $baseline;
     }
+  }
+
+  &__total, &__empty {
+    position: fixed;
+    bottom: 0;
+  left: 50%;
+  transform: translate(-50%,-50%);
+    width: 96%;
   }
 }

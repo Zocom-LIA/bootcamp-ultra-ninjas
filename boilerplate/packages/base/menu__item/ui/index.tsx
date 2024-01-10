@@ -62,11 +62,11 @@ const MenuComponent = () => {
       <div className="menu">
         <h1 className="menu_h1">Meny</h1>
         {menu && (
-          <div>
+          <div className="container">
             {menu.wontons.map((item) => (
               <div key={item.id} className="menu-item" onClick={() => handleWontonClick(item)}>
-                <div className="menu-item__name">
-                  <h2 className="menu_h2">{item.name}</h2>
+                <div className="menu-item__info">
+                  <h2 className="menu-item__name">{item.name}</h2>
                   <p className="menu-item__divider"></p>
                   <div className="menu-item__price">
                     <h2 className="menu_h2">{item.price}</h2>
@@ -76,22 +76,25 @@ const MenuComponent = () => {
 
                 {item.ingredients && (
                   <ul className="ingredients-list">
-                    {item.ingredients.map((ingredient, ingredientIndex) => (
+                    {item.ingredients.map((ingredient, ingredientIndex ) => (
                       <li key={ingredientIndex}>{ingredient}</li>
                     ))}
                   </ul>
                 )}
+
               </div>
             ))}
 
-            <h2 className="menu_h2">Dipsås</h2>
-            <div className="dip-buttons-container">
-              {menu.dip.map((item) => (
-                <Button key={item.id} type={ButtonType.REGULAR} style={StyleTypes.DEFAULT} onClick={() => handleDipClick(item)}>
-                  <h2>{item.name}</h2>
-                </Button>
-              ))}
-            </div>
+            <section className="dip-container">
+              <h2 className="menu_h2">Dipsås</h2>
+                <div className="dip-buttons">
+                  {menu.dip.map((item) => (
+                    <Button key={item.id} type={ButtonType.REGULAR} style={StyleTypes.DEFAULT} onClick={() => handleDipClick(item)}>
+                      <h2>{item.name}</h2>
+                    </Button>
+                  ))}
+                </div>
+            </section>
           </div>
         )}
       </div>

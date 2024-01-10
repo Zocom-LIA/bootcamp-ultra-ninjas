@@ -5,9 +5,11 @@ import React from "react";
 
 export const Eta = () => {
   return (
-    <div className="etaPage">
+    <section className="etaPage">
      
-      <EtaPage/>
-    </div>
+        <section className="eta-component">
+          <EtaPage/>
+        </section>
+    </section>
   );
 };
