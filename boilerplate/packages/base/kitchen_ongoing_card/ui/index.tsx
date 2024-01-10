@@ -1,12 +1,20 @@
+import React from 'react';
 import './styles.scss';
 import { Button, ButtonType} from "@zocom/button";
 import { StyleTypes } from "@zocom/types";
 //{menuData.wontons[1].name}
 
-export const KitchenOngoingCard = () => {
+interface KitchenOngoingCardProps {
+    orderId: string;
+    onRedoClick: (orderId: string) => void;
+}
+
+export const KitchenOngoingCard: React.FC<KitchenOngoingCardProps> = ({ orderId, onRedoClick }) => {
 
     const handleClick = () => {
-        console.log("clicked!");
+        console.log("redo att serveras clicked!");
+        // Pass orderId to the onRedoClick handler
+        onRedoClick(orderId);
     };
 
     return (
