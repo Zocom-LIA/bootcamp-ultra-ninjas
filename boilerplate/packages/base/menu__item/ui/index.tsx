@@ -62,8 +62,9 @@ const MenuComponent = () => {
       <div className="menu">
         <h1 className="menu_h1">Meny</h1>
         {menu && (
-          <div className="container">
+          <section>
             {menu.wontons.map((item) => (
+              <section className="menu-container">
               <div key={item.id} className="menu-item" onClick={() => handleWontonClick(item)}>
                 <div className="menu-item__info">
                   <h2 className="menu-item__name">{item.name}</h2>
@@ -83,6 +84,7 @@ const MenuComponent = () => {
                 )}
 
               </div>
+              </section>
             ))}
 
             <section className="dip-container">
@@ -95,7 +97,7 @@ const MenuComponent = () => {
                   ))}
                 </div>
             </section>
-          </div>
+          </section>
         )}
       </div>
     </div>

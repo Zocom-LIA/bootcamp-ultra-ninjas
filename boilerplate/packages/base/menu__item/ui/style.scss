@@ -3,13 +3,12 @@
 .menu {
   background: $colorClay;
   color: $colorSnow;
-  text-shadow: #3531313d 2.5px 1px 1px;
-  padding: $baseline;
- 
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.30);
   border-radius: $radius-tier-2;
+  margin: $margin-large;
 
   .menu_h1 {
-    padding: $padding-sml 0;
+    padding: $padding-large;
     @include fontsizeExtraLarge;
     text-transform: uppercase;
     font-weight: 600;
@@ -20,6 +19,14 @@
     text-transform: uppercase;
     font-weight: 600;
    }
+  }
+
+  .menu-container {
+    padding: 0 $padding-large;
+    &:hover {
+      background-color: $colorLightGray;
+      cursor: pointer;
+    }
   }
 
   .menu-item {
@@ -54,15 +61,11 @@
       gap: $gap-sml;
       font-weight: 400;
     }
-    
-    &:hover {
-      background-color: $colorLightGray;
-      cursor: pointer;
-    }
   }
 
   .dip-container {
-    margin-top: $margin-large;
+    margin-top: $margin-sml;
+    padding: $padding-large;
   }
 
   .dip-buttons {
