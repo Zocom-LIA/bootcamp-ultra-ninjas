@@ -52,25 +52,25 @@ functions:
     events:
       - httpApi:
           path: /api/order/{orderId}
-          method: POST
+          method: GET
   registerUser:
     handler: "./src/functions/registerUser/index.handler"
     events:
       - httpApi:
           path: /api/user/register
-          method: post
+          method: POST
   loginUser:
     handler: "./src/functions/loginUser/index.handler"
     events:
       - httpApi:
           path: /api/user/login
-          method: post
+          method: POST
   getUser:
     handler: "./src/functions/getUser/index.handler"
     events:
       - httpApi:
           path: /api/user/{id}
-          method: get
+          method: GET
 
 resources:
   Resources:
