@@ -7,14 +7,15 @@ export interface MenuItem {
 }
 
 export interface CartItem {
-  info: MenuItem[];
+  info: MenuItem;
   totalPrice: number;
   quantity: number;
 }
 
 export interface Order {
-  id: string;
+  id?: string;
   items: CartItem[];
+  totalOrderPrice: number;
 }
 
 export interface ResponseBody {

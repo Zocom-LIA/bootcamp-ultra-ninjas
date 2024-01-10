@@ -8,11 +8,13 @@ import * as menuData from "../../../../data/menu.json";
 
 const addToOrder = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   try {
-    const { itemId, category } = JSON.parse(event.body || "{}");
+    const { itemId, category, orderId } = JSON.parse(event.body || "{}");
     //	"itemId": 11,
     // "category": "Dip"
+    // "orderId": "3454" (if NEW order, leave out order id)
 
     let selectedItem: MenuItem | undefined;
+    const orderIdOrDefault = orderId || "defaultOrderId";
 
     if (category === "Dip") {
       selectedItem = menuData.dip.find((item) => item.id === itemId);
@@ -21,48 +23,74 @@ const addToOrder = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyR
     }
 
     if (!selectedItem) {
-      return sendError(404, { success: false, message: "Item not found in the selected category" });
+      return sendError(404, { success: false, message: "Item not found" });
     }
 
-    // Add item to order - create new order
+    const newCartItem: CartItem = {
+      info: selectedItem,
+      totalPrice: selectedItem.price * 1,
+      quantity: 1,
+    };
 
-    // const newCartItem: CartItem = {
-    //   info: selectedItem,
-    // }
+    console.log("newCartItem here:", newCartItem);
 
-    //     const newOrder: Order = {
-    //       id: v4(),
-    //       items:
-    //     };
+    const searchParams = {
+      TableName: "YYGSOrders",
+      Key: { id: orderIdOrDefault },
+    };
 
-    //     await db
-    //       .put({
-    //         TableName: "YYGSUsers",
-    //         Item: newUser,
-    //       })
-    //       .promise();
+    const result = await db.get(searchParams).promise();
 
-    // await db
-    //   .put({
-    //     TableName: "YYGSOrders",
-    //     Item: order,
-    //   })
-    //   .promise();
+    if (!result.Item) {
+      const newOrder: Order = {
+        id: v4(),
+        items: [newCartItem],
+        totalOrderPrice: newCartItem.totalPrice,
+      };
 
-    // // See if orderId already exists for current order
-    // const params = {
-    //   TableName: "YYGSOrders",
-    //   FilterExpression: "id = :id",
-    //   ExpressionAttributeValues: {
-    //     ":id": orderId,
-    //   },
-    // };
+      console.log("newOrder here:", newOrder);
 
-    // const result = await db.scan(params).promise();
+      await db
+        .put({
+          TableName: "YYGSOrders",
+          Item: newOrder,
+        })
+        .promise();
+
+      return sendResponse(200, {
+        success: true,
+        message: "Item added to cart",
+        body: newOrder,
+      });
+    }
+
+    if (result.Item.id === orderId) {
+      const existingItemIndex = result.Item.items.findIndex((item: CartItem) => item.info.id === itemId);
+
+      if (existingItemIndex !== -1) {
+        result.Item.items[existingItemIndex].quantity += 1;
+        const itemTotalPrice = result.Item.items[existingItemIndex].info.price;
+        const itemQuantity = result.Item.items[existingItemIndex].quantity;
+
+        result.Item.items[existingItemIndex].totalPrice = itemTotalPrice * itemQuantity;
+      } else {
+        result.Item.items.push(newCartItem);
+      }
+
+      result.Item.totalOrderPrice += newCartItem.totalPrice;
+
+      await db
+        .put({
+          TableName: "YYGSOrders",
+          Item: result.Item,
+        })
+        .promise();
+    }
 
     return sendResponse(200, {
       success: true,
-      message: "Item added to cart successfully.",
+      message: "Cart updated",
+      body: result.Item,
     });
   } catch (error) {
     return sendError(500, { success: false, message: "Internal Server Error" });
