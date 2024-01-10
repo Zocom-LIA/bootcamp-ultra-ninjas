@@ -1,5 +1,11 @@
 @use "@zocom/styles" as *;
 
+
+
+$menu-breakpoint: 480px; 
+
+
+
 .menu {
   background: $colorClay;
   color: $colorSnow;
