@@ -19,6 +19,8 @@ interface Menu {
   dip: MenuItemData[];
 }
 
+
+
 const MenuComponent = () => {
   const [menu, setMenu] = useState<Menu | null>(null);
   const [totalQuantity, setTotalQuantity] = useState(mockOrder.reduce((acc, item) => acc + item.quantity, 0));
