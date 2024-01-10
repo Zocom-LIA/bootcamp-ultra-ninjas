@@ -36,8 +36,7 @@ const registerUser = async (event: APIGatewayProxyEvent): Promise<APIGatewayProx
     return sendResponse(201, {
       success: true,
       message: "User registered successfully",
-      username: username,
-      userID: newUser.userID,
+      userInfo: { username: username, userID: newUser.userID },
     });
   } catch (error) {
     console.error("Error registering user", error);
