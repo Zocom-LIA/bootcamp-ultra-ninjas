@@ -35,8 +35,7 @@ const loginUser = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyRe
     return sendResponse(200, {
       success: true,
       message: `User ${username} successfully logged in!`,
-      token,
-      userID: userData.userID,
+      userInfo: { token: token, userID: userData.userID },
     });
   } catch (error) {
     console.error("Error logging in", error);

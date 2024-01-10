@@ -3,7 +3,7 @@ import { db } from "../../services/db";
 import middy from "@middy/core";
 import { sendResponse, sendError } from "../../responses";
 
-const removeOrder = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
+const removeFromOrder = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   try {
     // Add code here
     return sendResponse(200, {
@@ -15,4 +15,4 @@ const removeOrder = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxy
   }
 };
 
-export const handler = middy(removeOrder).handler(removeOrder);
+export const handler = middy(removeFromOrder).handler(removeFromOrder);

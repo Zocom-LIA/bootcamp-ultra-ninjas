@@ -3,7 +3,7 @@ import { db } from "../../services/db";
 import middy from "@middy/core";
 import { sendResponse, sendError } from "../../responses";
 
-const newOrder = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
+const placeOrder = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   try {
     // Add code here
     return sendResponse(200, {
@@ -15,4 +15,4 @@ const newOrder = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyRes
   }
 };
 
-export const handler = middy(newOrder).handler(newOrder);
+export const handler = middy(placeOrder).handler(placeOrder);

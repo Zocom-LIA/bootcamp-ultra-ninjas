@@ -23,8 +23,7 @@ const getUser = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResu
     return sendResponse(200, {
       success: true,
       message: "User found",
-      username: result.Item.username,
-      userID: result.Item.userID,
+      body: { username: result.Item.username, userID: result.Item.userID },
     });
   } catch (error) {
     console.error("Error getting user:", error);

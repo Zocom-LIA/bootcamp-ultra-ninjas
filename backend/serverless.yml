@@ -23,8 +23,8 @@ functions:
       - httpApi:
           path: /api/menu
           method: GET
-  newOrder:
-    handler: "./src/functions/newOrder/index.handler"
+  addToOrder:
+    handler: "./src/functions/addToOrder/index.handler"
     events:
       - httpApi:
           path: /api/order
@@ -35,12 +35,24 @@ functions:
       - httpApi:
           path: /api/menu/add
           method: POST
-  removeOrder:
-    handler: "./src/functions/removeOrder/index.handler"
+  removeFromOrder:
+    handler: "./src/functions/removeFromOrder/index.handler"
     events:
       - httpApi:
           path: /api/order/delete/{orderId}
           method: DELETE
+  placeOrder:
+    handler: "./src/functions/placeOrder/index.handler"
+    events:
+      - httpApi:
+          path: /api/order/placeOrder
+          method: POST
+  getOrder:
+    handler: "./src/functions/getOrder/index.handler"
+    events:
+      - httpApi:
+          path: /api/order/{orderId}
+          method: POST
   registerUser:
     handler: "./src/functions/registerUser/index.handler"
     events:
