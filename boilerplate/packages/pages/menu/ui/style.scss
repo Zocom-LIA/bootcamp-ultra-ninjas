@@ -5,13 +5,6 @@
 .menuPage{
   @include center;
   background-color: $colorMintMenu;
-  background-image: url('./menu.page.background.svg');
+  background-image: url('./menu-page-bg.svg');
   background-size: cover;
-}
-
-@media only screen and (max-width: $mobileBreakpoint) {
-  .menuPage {
-    min-height: 100vh;
-    min-width: 100vw;
-  }
 }

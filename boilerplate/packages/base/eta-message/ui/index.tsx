@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Header } from "@zocom/header";
 import "./style.scss";
 import boxTopImage from '../../../.././../assets/boxtop 1.svg'; 
 import { Button,ButtonType } from '@zocom/button';
@@ -24,9 +25,10 @@ const EtaPage = () => {
 
   return (
     <div>
+      <Header />
       <div className={`eta-page ${orderDone ? 'order-done' : ''}`}>
         <img src={boxTopImage} alt="Box Top" className="eta-page__image" />
-        <h1 className="eta-page__title">{orderDone ? 'Dina wontons är klara!' : 'Dina wontons tillagas!'}</h1>
+        <h1 className="eta-page__title">{orderDone ? 'Dina wontons är klara' : 'Dina wontons tillagas'}</h1>
         {orderDone ? null : <h2 className='eta-page__h2'>ETA: {mockEta}</h2>}
         <p>#{mockOrderNumber}</p>
         <div className="eta-page__buttons">

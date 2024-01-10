@@ -8,6 +8,7 @@
      }
      
     background-color: $colorClay;
+    
     padding: $baseline;
     @include column;
     color: $colorSnow;
@@ -20,7 +21,6 @@
 
     .eta-page__title{
         padding: $padding-sml;
-        text-align: center;
    
    
         @include fontsizeExtraLarge;
@@ -32,16 +32,21 @@
         @include fontsizeLarge;
         font-weight: 500;
         margin: $baseline;
+     
     }
 
 
     .eta-page__buttons{
         @include column;
-        position: fixed;
-        bottom: 0;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        width: 96%;
+        width: 100%;
+        margin-top: $margin-huge;
+
+        
+
+        .eta-page__linkButton{
+            width: 100%;
+        }
+
 
         .button__regular--default,
       
@@ -52,7 +57,6 @@
             text-transform: uppercase;
             @include fontsizeLarge;
             font-weight: 600;
-            padding: $padding-large;
 
             &:hover{
                 background-color:$colorCoal;
@@ -68,6 +72,4 @@
 
   
 }
-
-
 

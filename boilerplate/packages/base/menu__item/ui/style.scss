@@ -9,30 +9,22 @@ $menu-breakpoint: 480px;
 .menu {
   background: $colorClay;
   color: $colorSnow;
-  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.30);
-  border-radius: $radius-tier-2;
-  margin: $margin-large;
+  text-shadow: #3531313d 2.5px 1px 1px;
+  padding: $baseline;
+  
+  font-weight: 600;
 
   .menu_h1 {
-    padding: $padding-large;
+    padding: $padding-sml;
     @include fontsizeExtraLarge;
     text-transform: uppercase;
-    font-weight: 600;
   }
 
   .menu_h2 {
     @include fontsizeLarge;
-    text-transform: uppercase;
-    font-weight: 600;
+    @include row;
+    
    }
-  }
-
-  .menu-container {
-    padding: 0 $padding-large;
-    &:hover {
-      background-color: $colorLightGray;
-      cursor: pointer;
-    }
   }
 
   .menu-item {
@@ -41,55 +33,54 @@ $menu-breakpoint: 480px;
     margin: $margin-sml;
     border-bottom: $colorLightGray dotted 1px;
 
-    .menu-item__name {
-      @include fontsizeLarge;
-      text-transform: uppercase;
-      white-space: nowrap;
-      font-weight: 600;
+    &:hover {
+      background-color: $colorLightGray;
+      cursor: pointer;
     }
-      
-    .menu-item__info{
+    
+    
+    .menu-item__name{
       @include row;
     }
 
     .menu-item__divider {
+      font-weight: 300;
       width: 100%;
       border-bottom: 2px dotted $colorSnow;
       margin-bottom: 6px;
     }
 
     .menu-item__price{
-      @include row;
+      @include row
     }
-      
+
+
+    
+
     .ingredients-list {
       @include row;
       gap: $gap-sml;
-      font-weight: 400;
+      font-weight: 500;
+
+        @include row;
+        gap: $gap-sml;
+        font-weight: 500;
+        
+      @media only screen and (max-width: $menu-breakpoint) {
+        @include grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   }
 
-  .dip-container {
-    margin-top: $margin-sml;
-    padding: $padding-large;
-  }
+  .dip-buttons-container {
+    @include grid;
+    margin: $margin-sml;
 
-  .dip-buttons {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: $margin-large 0 $margin-sml 0;
-    
     .button__regular--default {
-      @include fontsizeRegular;
-      font-weight: 400;
       background-color: $colorLightGray;
       color: $colorSnow;
       text-shadow: #3531313d 2.5px 1px 1px;
-      text-transform: lowercase;
-      padding: $padding-sml;
-      margin-bottom: 0.5rem;
 
       &:hover {
         background-color: $colorCoal;
@@ -98,20 +89,27 @@ $menu-breakpoint: 480px;
     }
   }
 
+  // Media query for screens smaller than $menu-breakpoint
+  @media only screen and (max-width: $menu-breakpoint) {
+    
+    menu-item {
+      
+      flex-direction: column;
+    }
 
-@media only screen and (max-width: $mobileBreakpoint) {
-    .menu {
-      margin: $margin-large;
-        
-      .menu-item {
-        margin: $margin-sml 0; 
-      }
-        
-      .dip-buttons {
-        display: flex;
-        align-items: flex-start;
-        flex-wrap: wrap;
-      }
+    .menu-item {
+      margin: $margin-sml 0; 
+      flex-direction: column;
+    }
+
+    menu-item__name,
+    .menu-item__price,
+    .ingredients-list {
+      @include column;
+    }
+
+    .dip-buttons-container {
+      @include grid;
+      grid-template-columns: 1fr; 
     }
   }
-
