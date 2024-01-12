@@ -4,7 +4,6 @@
 
 import React, { useState } from 'react';
 import './style.scss';
-import { Header } from "@zocom/header";
 import { StyleTypes } from '@zocom/types';
 import { Button,ButtonType } from '@zocom/button';
 import logoImage from '../../../.././../assets/logo.svg';
@@ -55,7 +54,7 @@ export const LoginComponent: React.FC = () => {
 
   return (
     <div>
-    <Header />
+    
 
     
     <div className="login">
