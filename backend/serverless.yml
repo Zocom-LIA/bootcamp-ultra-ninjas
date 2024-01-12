@@ -76,7 +76,7 @@ resources:
   Resources:
     YYGSUsers:
       Type: AWS::DynamoDB::Table
-      DeletionPolicy: Delete
+      DeletionPolicy: Retain
       Properties:
         TableName: YYGSUsers
         AttributeDefinitions:
