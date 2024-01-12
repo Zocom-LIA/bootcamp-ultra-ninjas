@@ -13,11 +13,13 @@
         padding: $padding-huge;
         border-radius: $radius-tier-1;
         margin-top: $margin-huge;
+        box-shadow: $shadow-large;
     }
 
     h2 {
         text-align: center;
         padding: $baseline $padding-huge;
+        color: $colorSnow;
     }
 
     &__guest {
@@ -31,6 +33,7 @@
     margin-right: auto;
     text-transform: uppercase;
     letter-spacing: 2px;
+    box-shadow: $shadow-medium;
 }
 
 .yygs-logo {
@@ -41,4 +44,5 @@
     margin-left: auto;
     margin-right: auto;
     border-radius: $radius-tier-2;
+    box-shadow: $shadow-medium;
 }
