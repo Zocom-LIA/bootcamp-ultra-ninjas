@@ -34,6 +34,13 @@ export interface MenuItemData {
   id: number;
 }
 
+export interface CartItemData {
+  info: MenuItemData;
+  totalPrice: number;
+  quantity: number;
+  orderId?: string;
+}
+
 export interface Menu {
   wontons: MenuItemData[];
   dip: MenuItemData[];
@@ -44,11 +51,6 @@ export interface OrderProps {
   items: CartItemData[];
   totalOrderPrice: number;
   totalQuantity?: number;
-}
-
-export interface CartItemData extends MenuItemData {
-  quantity: number;
-  orderId?: string;
 }
 
 export interface OrderType {

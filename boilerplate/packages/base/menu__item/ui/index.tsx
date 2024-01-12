@@ -18,8 +18,9 @@ const MenuComponent = () => {
   }, []);
 
   const addItemToCart = async (item: MenuItemData) => {
-    const itemIndex = cartOrder.findIndex((orderItem) => orderItem.id === item.id);
-    const totalPrice = cartOrder.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    const itemIndex = cartOrder.findIndex((orderItem) => orderItem.info.id === item.id);
+
+    const totalPrice = cartOrder.reduce((acc, item) => acc + item.info.price * item.quantity, 0);
     console.log("33", totalPrice);
 
     if (itemIndex !== -1) {
@@ -28,6 +29,8 @@ const MenuComponent = () => {
       cartOrder.push({
         ...item,
         quantity: 1,
+        info: item,
+        totalPrice: item.price,
       });
     }
 
