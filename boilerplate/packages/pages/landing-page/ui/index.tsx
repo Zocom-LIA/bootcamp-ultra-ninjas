@@ -1,27 +1,28 @@
+import { Link } from "react-router-dom";
 import "./style.scss";
-
-/* Import dependencies */
-import { useState } from "react";
+import logo from "./../../../../../assets/logo.svg";
 import { Button } from "@zocom/button";
-import { useData, ChuckNorrisResponse } from "..";
-
-import { Header } from "@zocom/header";
 
 export const LandingPage = () => {
-  const [quote, setQuote] = useState<ChuckNorrisResponse | null>(null);
-
-  const { fetchQuote } = useData();
-
-  async function handleFetchQuote() {
-    const quote = await fetchQuote();
-    setQuote(quote ? quote : null);
-  }
-
   return (
     <main className="landing-page">
-      <Header />
-      <h1 className="quote">{quote?.value}</h1>
-      <Button onClick={() => handleFetchQuote()}>Fetch a quote!</Button>
+      <section className="landing-page__container">
+        <img src={logo} className="yygs-logo" alt="YYGS logo" />
+
+        <section className="landing-page__login">
+          <h2>Logga in/registrera konto:</h2>
+          <Link to="/login">
+            <Button>Logga in</Button>
+          </Link>
+        </section>
+
+        <section className="landing-page__guest">
+          <h2>...eller fortsätt som gäst:</h2>
+            <Link to="/menu">
+              <Button>Meny</Button>
+            </Link>
+        </section>
+      </section>
     </main>
   );
 };
