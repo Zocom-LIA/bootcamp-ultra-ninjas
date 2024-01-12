@@ -11,18 +11,17 @@ export const Receipt = () => {
     <div className="receipt">
       <Header />
       <Animations>
-      <section className="receipt__section">
-        <ReceiptComponent />
-        <section className="receipt__button">
-        <Link to="/menu">
-          <Button type={ButtonType.STRETCH} style={StyleTypes.DARK}>
-            Gör en ny beställning
-          </Button>
-        </Link>
+        <section className="receipt__section">
+          <ReceiptComponent />
+          <section className="receipt__button">
+            <Link to="/menu">
+              <Button type={ButtonType.STRETCH} style={StyleTypes.DARK}>
+                Gör en ny beställning
+              </Button>
+            </Link>
+          </section>
         </section>
-      </section>
       </Animations>
     </div>
-    
   );
 };

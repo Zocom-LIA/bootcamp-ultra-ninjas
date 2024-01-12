@@ -5,9 +5,9 @@ import { TotalPrice } from "@zocom/totalprice";
 import logoIcon from "./../../../../../assets/logo.svg";
 
 export const ReceiptComponent = () => {
-  // fix these two later when BE
-  const total = cartOrder.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const total = cartOrder.reduce((acc, item) => acc + item.info.price * item.quantity, 0);
   const orderId = "4kjwsdf234k";
+  console.log("cartItem", CartItem);
 
   return (
     <article className="receipt-view">
@@ -18,7 +18,7 @@ export const ReceiptComponent = () => {
       </header>
       <ul>
         {cartOrder.map((item) => (
-          <CartItem key={item.id} id={item.id} name={item.name} price={item.price} quantity={item.quantity} showQuantityButtons={false} />
+          <CartItem key={item.info.id} id={item.info.id} name={item.info.name} price={item.info.price} quantity={item.quantity} showQuantityButtons={false} />
         ))}
       </ul>
       <TotalPrice total={total} />
