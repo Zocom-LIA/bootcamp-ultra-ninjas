@@ -8,7 +8,6 @@ type HeaderProps = {
   quantity?: number;
 };
 
-
 export const Header = ({ quantity, showCircle }: HeaderProps) => {
   const location = useLocation();
   const showCartIcon: boolean = location?.pathname === "/menu" || location?.pathname === "/order";
@@ -25,10 +24,10 @@ export const Header = ({ quantity, showCircle }: HeaderProps) => {
           <img src={logoIconSrc} className="header__icon--logo" alt="logo icon" />
         </Link>
       {showCartIcon && (
-         <Link to="/order" className="header__icon--cart">
-         <img src={cartIconSrc} alt="cart icon" />
-         <div className={"cart__count " + (!showCircle ? "hidden" : null)}>{quantity}</div>
-       </Link>
+        <Link to="/order/cart" className="header__icon--cart">
+          <img src={cartIconSrc} alt="cart icon" />
+          <div className={"cart__count " + (!showCircle ? "hidden" : null)}>{quantity}</div>
+        </Link>
       )}
       {kitchenView && <h1>Kitchen View</h1>}
     </header>
