@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Header } from "@zocom/header";
 import "./style.scss";
-import boxTopImage from '../../../.././../assets/boxtop 1.svg'; 
-import { Button,ButtonType } from '@zocom/button';
+import boxTopImage from "../../../.././../assets/boxtop 1.svg";
+import { Button, ButtonType } from "@zocom/button";
 import { Link } from "react-router-dom";
-
+import { cartOrder } from "@zocom/order";
 
 const EtaPage = () => {
   // Mock ETA and order number (replace them with actual values later)
@@ -19,33 +19,34 @@ const EtaPage = () => {
     setOrderDone(true);
   };
 
-  
+  const [updateCart, setUpdateCart] = useState(cartOrder);
 
- 
+  const handleClick = () => {
+    setUpdateCart([]);
+    cartOrder.length = 0;
+  };
 
   return (
     <div>
       <Header />
-      <div className={`eta-page ${orderDone ? 'order-done' : ''}`}>
+      <div className={`eta-page ${orderDone ? "order-done" : ""}`}>
         <img src={boxTopImage} alt="Box Top" className="eta-page__image" />
-        <h1 className="eta-page__title">{orderDone ? 'Dina wontons är klara!' : 'Dina wontons tillagas!'}</h1>
-        {orderDone ? null : <h2 className='eta-page__h2'>ETA: {mockEta}</h2>}
+        <h1 className="eta-page__title">{orderDone ? "Dina wontons är klara!" : "Dina wontons tillagas!"}</h1>
+        {orderDone ? null : <h2 className="eta-page__h2">ETA: {mockEta}</h2>}
         <p>#{mockOrderNumber}</p>
         <div className="eta-page__buttons">
-        <Link to="/menu"className='eta-page__linkButton'>
-          <Button type={ButtonType.STRETCH}>
-            Beställ mer
-          </Button>
+          <Link to="/menu" className="eta-page__linkButton">
+            <Button type={ButtonType.STRETCH} onClick={handleClick}>
+              Beställ mer
+            </Button>
           </Link>
           {orderDone ? (
-            <Link to="/order/receipt" className='eta-page__linkButton'>
-              <Button type={ButtonType.STRETCH}>
-                Se kvitto
-              </Button>
+            <Link to="/order/receipt" className="eta-page__linkButton">
+              <Button type={ButtonType.STRETCH}>Se kvitto</Button>
             </Link>
           ) : (
             <Button type={ButtonType.STRETCH} onClick={handleOrderCompletion}>
-              order Done / "Se kvitto"  
+              order Done / "Se kvitto"
             </Button>
           )}
         </div>
