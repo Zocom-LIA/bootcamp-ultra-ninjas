@@ -9,15 +9,13 @@ import { OrderProps, CartItemData } from "@zocom/types";
 import { Link } from "react-router-dom";
 import { submitToApi } from "../../../../src/api";
 
-// change when doing real menu and not mockup
-// export const mockOrder: CartItemData[] = [];
-
+// eslint-disable-next-line react-refresh/only-export-components
 export const cartOrder: CartItemData[] = [];
 
 export const Order = () => {
   const [cartItems, setCartItems] = useState<CartItemData[]>(cartOrder);
 
-  const totalPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const totalPrice = cartItems.reduce((acc, item) => acc + item.info.price * item.quantity, 0);
   const totalQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   const order: OrderProps[] = [
@@ -35,17 +33,11 @@ export const Order = () => {
   // };
 
   const handleDecreaseQuantity = (itemId: number) => {
-    setCartItems((prevItems) => prevItems.map((item) => (item.id === itemId && item.quantity > 0 ? { ...item, quantity: item.quantity - 1 } : item)));
-    setCartItems((prevItems) => prevItems.filter((item) => !(item.id === itemId && item.quantity === 0)));
+    setCartItems((prevItems) => prevItems.map((item) => (item.info.id === itemId && item.quantity > 0 ? { ...item, quantity: item.quantity - 1 } : item)));
+    setCartItems((prevItems) => prevItems.filter((item) => !(item.info.id === itemId && item.quantity === 0)));
   };
 
-  // fix later, should send order to BE and then move onto ETA page?
-  const handlePurchaseClick = () => {
-    console.log("Purchased!");
-    console.log(order);
-  };
-
-  // API
+  // API (not done)
 
   const handleOrder = async (itemId: number, e: React.MouseEvent) => {
     e.preventDefault();
@@ -64,7 +56,7 @@ export const Order = () => {
     // below separate + or - btn (add setCartItems for del too)
     const method = "POST"; // delete for remove
 
-    setCartItems((prevItems) => prevItems.map((item) => (item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item)));
+    setCartItems((prevItems) => prevItems.map((item) => (item.info.id === itemId ? { ...item, quantity: item.quantity + 1 } : item)));
 
     const response = await submitToApi(data, method, link);
     console.log("itemData", itemId, "data", data);
@@ -75,8 +67,6 @@ export const Order = () => {
     } else {
       console.log("Error");
     }
-
-    // if - clicked
   };
 
   return (
@@ -85,7 +75,7 @@ export const Order = () => {
       <section className="order__section">
         <ul>
           {cartItems.map((item) => (
-            <CartItem key={item.id} id={item.id} name={item.name} price={item.price} quantity={item.quantity} showQuantityButtons={true} itemIncrease={handleOrder} itemDecrease={handleDecreaseQuantity} />
+            <CartItem key={item.info.id} id={item.info.id} name={item.info.name} price={item.info.price} quantity={item.quantity} showQuantityButtons={true} itemIncrease={handleOrder} itemDecrease={handleDecreaseQuantity} />
           ))}
         </ul>
         {totalQuantity === 0 ? (
@@ -102,7 +92,7 @@ export const Order = () => {
           <article>
             <TotalPrice total={totalPrice} />
             <Link to="/order/eta">
-              <Button type={ButtonType.STRETCH} style={StyleTypes.DARK} onClick={handlePurchaseClick}>
+              <Button type={ButtonType.STRETCH} style={StyleTypes.DARK}>
                 take my money!
               </Button>
             </Link>
