@@ -1,27 +1,42 @@
 import "./style.scss";
-
-/* Import dependencies */
 import { useState } from "react";
-import { Button } from "@zocom/button";
-import { useData, ChuckNorrisResponse } from "..";
-
+import { Button, ButtonType } from "@zocom/button";
 import { Header } from "@zocom/header";
+import { Link } from "react-router-dom";
+import logoImage from '../../../.././../assets/logo.svg'; 
 
 export const LandingPage = () => {
-  const [quote, setQuote] = useState<ChuckNorrisResponse | null>(null);
-
-  const { fetchQuote } = useData();
-
-  async function handleFetchQuote() {
-    const quote = await fetchQuote();
-    setQuote(quote ? quote : null);
-  }
+ 
+ 
 
   return (
     <main className="landing-page">
       <Header />
-      <h1 className="quote">{quote?.value}</h1>
-      <Button onClick={() => handleFetchQuote()}>Fetch a quote!</Button>
+      
+      <div className="landing-page__content">
+      <img src={logoImage} alt="Box Top" className="eta-page__image" />
+      <h1> YUM YUM GIM</h1>
+      
+      <div className="landing-page__btnContainer">
+      
+      <Link to="/menu"className='eta-page__linkButton'>
+          <Button type={ButtonType.STRETCH}>
+            Meny
+          </Button>
+          </Link>
+          <Link to="/login"className='eta-page__linkButton'>
+          <Button type={ButtonType.STRETCH}>
+            Login
+          </Button>
+          </Link>
+      </div>
+       
+      </div>
+      
+      
+     
+     
+
     </main>
   );
 };

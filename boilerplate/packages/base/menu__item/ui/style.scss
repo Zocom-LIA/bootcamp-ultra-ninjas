@@ -41,10 +41,10 @@ $menu-breakpoint: 480px;
     }
 
     .menu-item__divider {
-      font-weight: 300;
+      
       width: 100%;
       border-bottom: 2px dotted $colorSnow;
-      margin-bottom: 6px;
+      margin-bottom: $padding-sml;
     }
 
     .menu-item__price{
@@ -56,7 +56,7 @@ $menu-breakpoint: 480px;
 
     .ingredients-list {
       @include row;
-      font-weight: 400;
+      font-weight: 600;
         gap: $gap-sml;
         margin: $margin-nano 0;
         display: flex;
@@ -79,6 +79,7 @@ $menu-breakpoint: 480px;
 
   .dip-buttons-container {
     margin: $margin-sml;
+    @include grid;
 
     .button__regular--default {
       background-color: $colorLightGray;
@@ -86,7 +87,7 @@ $menu-breakpoint: 480px;
       text-shadow: #3531313d 2.5px 1px 1px;
       text-transform: lowercase;
       margin: $margin-nano;
-      font-weight: 400;
+      font-weight: 600;
       padding: $padding-sml;
       
 
@@ -95,6 +96,16 @@ $menu-breakpoint: 480px;
         background-color: $colorCoal;
         cursor: pointer;
       }
+    }
+  }
+
+
+
+  @media only screen and (max-width: $menu-breakpoint) {
+    
+   .dip-buttons-container {
+      @include grid;
+      grid-template-columns: 1fr; 
     }
   }
 

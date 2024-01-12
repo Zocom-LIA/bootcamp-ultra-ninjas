@@ -1,17 +1,56 @@
 @use '@zocom/styles' as *;
 
 .landing-page {
-    width: 100vw;
+    
     height: 100vh;
-    background-color: #eee;
+    
     @include column;
     padding: $padding-large;
+    background-image: url('../../../.././../assets/poster 1.svg');
+    padding-bottom: $padding-huge;
 
-    .quote {
-        margin: auto;
-        max-width: 60vw;
-        width: 100%;
-        text-align: center;
-        @include fontsizeLarge;
+    background-size: cover;
+    
+
+    .landing-page__content{
+      
+       @include column;
+      
+       @include fontsizeExtraLarge;
+       font-weight: 600;
+       color: $colorSnow;
+       background-color: $colorClay;
+       padding: $padding-huge;
+       border-radius: $radius-tier-1;
+    
+     
+      
+       
+       
     }
+
+   .landing-page__btnContainer{
+    
+    .button__stretch--default {
+        background-color: $colorClay;
+        border: $colorSnow 2px solid;
+        color: $colorSnow;
+        text-transform: uppercase;
+        @include fontsizeLarge;
+        font-weight: 600;
+        margin-top: $baseline;;
+        
+
+        &:hover{
+            background-color:$colorCoal;
+            cursor: pointer;
+            border: none;
+        }
+    }
+
+   }
+
+
 }
+
+

@@ -3,6 +3,8 @@
 
 .etaPage{
   background-color: $colorClay;
-  height: 100vh;
+  
+  @include center;
+
 }
 
