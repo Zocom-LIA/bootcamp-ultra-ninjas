@@ -17,6 +17,7 @@ body {
     &__heading {
         display: flex;
         color: $colorAsh;
+        margin-top: $margin-large;
         align-items: center;
         font-weight: 700;
         letter-spacing: 0.12rem;

@@ -1,14 +1,7 @@
 @use '@zocom/styles' as *;
 
 
-
-.eta-page{
-    .header{
-        background-color: $colorClay;
-     }
-     
-    background-color: $colorClay;
-    
+.eta-page {
     padding: $baseline;
     @include column;
     color: $colorSnow;
@@ -18,38 +11,30 @@
         background-color: $colorDarkMint;
     }
 
-
     .eta-page__title{
         padding: $padding-sml;
-   
-   
         @include fontsizeExtraLarge;
-        font-weight: 600
+        font-weight: 600;
+        text-align: center;
     }
-    
+
     .eta-page__h2{
         text-transform: uppercase;
         @include fontsizeLarge;
         font-weight: 500;
         margin: $baseline;
-     
     }
-
 
     .eta-page__buttons{
         @include column;
         width: 100%;
         margin-top: $margin-huge;
 
-        
-
         .eta-page__linkButton{
             width: 100%;
         }
 
-
         .button__regular--default,
-      
         .button__stretch--default {
             background-color: $colorClay;
             border: $colorSnow 2px solid;
@@ -63,13 +48,7 @@
                 cursor: pointer;
                 border: none;
             }
-           
-
-            
         }
-
     }
-
-  
 }
 

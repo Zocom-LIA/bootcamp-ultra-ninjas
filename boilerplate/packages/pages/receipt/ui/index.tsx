@@ -4,11 +4,13 @@ import { Button, ButtonType } from "@zocom/button";
 import { StyleTypes } from "@zocom/types";
 import { ReceiptComponent } from "@zocom/receiptcomponent";
 import { Link } from "react-router-dom";
+import Animations from "../../../../src/Animations";
 
 export const Receipt = () => {
   return (
     <div className="receipt">
       <Header />
+      <Animations>
       <section className="receipt__section">
         <ReceiptComponent />
         <section className="receipt__button">
@@ -19,6 +21,8 @@ export const Receipt = () => {
         </Link>
         </section>
       </section>
+      </Animations>
     </div>
+    
   );
 };

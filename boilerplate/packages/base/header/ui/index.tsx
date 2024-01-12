@@ -21,7 +21,9 @@ export const Header = ({ quantity, showCircle }: HeaderProps) => {
 
   return (
     <header className={header}>
-      <img src={logoIconSrc} className="header__icon--logo" alt="logo icon" />
+        <Link to="/menu" className="header__icon--logo-link">
+          <img src={logoIconSrc} className="header__icon--logo" alt="logo icon" />
+        </Link>
       {showCartIcon && (
          <Link to="/order" className="header__icon--cart">
          <img src={cartIconSrc} alt="cart icon" />

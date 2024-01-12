@@ -1,36 +1,32 @@
 @use "@zocom/styles" as *;
 
-
-
 $menu-breakpoint: 480px; 
-
-
 
 .menu {
   background: $colorClay;
   color: $colorSnow;
   text-shadow: #3531313d 2.5px 1px 1px;
-  padding: $baseline;
-  
+  margin: 1rem;
   font-weight: 600;
+  border-radius: $radius-tier-2;
+  padding-bottom: $padding-sml;
 
   .menu_h1 {
-    padding: $padding-sml;
     @include fontsizeExtraLarge;
     text-transform: uppercase;
+    padding: $padding-large 1rem;
   }
 
   .menu_h2 {
     @include fontsizeLarge;
-    @include row;
-    
+    text-transform: uppercase;
+    padding: $padding-nano $padding-sml;
    }
   }
 
   .menu-item {
-    padding-top: $baseline;
-    padding-bottom: $baseline;
-    margin: $margin-sml;
+    white-space: nowrap;
+    padding: $padding-sml;
     border-bottom: $colorLightGray dotted 1px;
 
     &:hover {
@@ -41,6 +37,7 @@ $menu-breakpoint: 480px;
     
     .menu-item__name{
       @include row;
+      white-space: nowrap;
     }
 
     .menu-item__divider {
@@ -51,36 +48,48 @@ $menu-breakpoint: 480px;
     }
 
     .menu-item__price{
-      @include row
+      @include row;
+      @include fontsizeLarge;
+    text-transform: uppercase;
+    padding: $padding-nano $padding-sml $padding-nano 0;
     }
-
-
-    
 
     .ingredients-list {
       @include row;
-      gap: $gap-sml;
-      font-weight: 500;
-
-        @include row;
+      font-weight: 400;
         gap: $gap-sml;
-        font-weight: 500;
-        
-      @media only screen and (max-width: $menu-breakpoint) {
-        @include grid;
-        grid-template-columns: repeat(2, 1fr);
-      }
+        margin: $margin-nano 0;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 $padding-sml $padding-sml;
     }
+
+    .ingredients-list li:not(:last-child):after {
+      content: ',';
+     }
+
+  }
+
+  .dip {
+    @include fontsizeLarge;
+    text-transform: uppercase;
+    margin: $baseline;
+  
   }
 
   .dip-buttons-container {
-    @include grid;
     margin: $margin-sml;
 
     .button__regular--default {
       background-color: $colorLightGray;
       color: $colorSnow;
       text-shadow: #3531313d 2.5px 1px 1px;
+      text-transform: lowercase;
+      margin: $margin-nano;
+      font-weight: 400;
+      padding: $padding-sml;
+      
+
 
       &:hover {
         background-color: $colorCoal;
@@ -89,27 +98,3 @@ $menu-breakpoint: 480px;
     }
   }
 
-  // Media query for screens smaller than $menu-breakpoint
-  @media only screen and (max-width: $menu-breakpoint) {
-    
-    menu-item {
-      
-      flex-direction: column;
-    }
-
-    .menu-item {
-      margin: $margin-sml 0; 
-      flex-direction: column;
-    }
-
-    menu-item__name,
-    .menu-item__price,
-    .ingredients-list {
-      @include column;
-    }
-
-    .dip-buttons-container {
-      @include grid;
-      grid-template-columns: 1fr; 
-    }
-  }

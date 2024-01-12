@@ -7,6 +7,7 @@ import { StyleTypes } from "@zocom/types";
 import { TotalPrice } from "@zocom/totalprice";
 import { MenuItemData } from "../../../base/menu__item";
 import { Link } from "react-router-dom";
+import Animations from "../../../../src/Animations";
 
 interface OrderProps {
   cartItems: CartMenuItem[];
@@ -51,6 +52,7 @@ export const Order = () => {
   };
 
   return (
+    <Animations>
     <div className="order">
       <Header quantity={totalQuantity} showCircle={totalQuantity > 0 ? true : false} />
       <section className="order__section">
@@ -83,5 +85,6 @@ export const Order = () => {
         )}
       </section>
     </div>
+    </Animations>
   );
 };

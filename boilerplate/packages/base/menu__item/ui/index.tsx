@@ -71,22 +71,23 @@ const MenuComponent = () => {
                   <h2 className="menu_h2">{item.name}</h2>
                   <p className="menu-item__divider"></p>
                   <div className="menu-item__price">
-                    <h2 className="menu_h2">{item.price}</h2>
-                    <h2 className="menu_h2">SEK</h2>
+                    <h2>{item.price}</h2>
+                    <h2>SEK</h2>
                   </div>
                 </div>
-
                 {item.ingredients && (
-                  <ul className="ingredients-list">
-                    {item.ingredients.map((ingredient, ingredientIndex) => (
-                      <li key={ingredientIndex}>{ingredient}</li>
-                    ))}
-                  </ul>
-                )}
+                  <div className="ingredients-container">
+                      <ul className="ingredients-list">
+                        {item.ingredients.map((ingredient, ingredientIndex) => (
+                          <li key={ingredientIndex}>{ingredient}</li>
+                        ))}
+                      </ul>
+                  </div>
+                  )}
               </div>
             ))}
 
-            <h2 className="menu_h2">Dipsås</h2>
+            <h2 className="dip">Dipsås 19 SEK</h2>
             <div className="dip-buttons-container">
               {menu.dip.map((item) => (
                 <Button key={item.id} type={ButtonType.REGULAR} style={StyleTypes.DEFAULT} onClick={() => handleDipClick(item)}>
