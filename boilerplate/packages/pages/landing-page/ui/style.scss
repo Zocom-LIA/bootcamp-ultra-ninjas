@@ -1,17 +1,44 @@
 @use '@zocom/styles' as *;
 
 .landing-page {
+    background-image: url('./../../menu/ui/menu-page-bg.svg');
     width: 100vw;
     height: 100vh;
     background-color: #eee;
-    @include column;
+    @include  fontsizeLarge;
     padding: $padding-large;
 
-    .quote {
-        margin: auto;
-        max-width: 60vw;
-        width: 100%;
-        text-align: center;
-        @include fontsizeLarge;
+    &__container {
+        background-color: $colorDarkMint;
+        padding: $padding-huge;
+        border-radius: $radius-tier-1;
+        margin-top: $margin-huge;
     }
+
+    h2 {
+        text-align: center;
+        padding: $baseline $padding-huge;
+    }
+
+    &__guest {
+        margin-top: $margin-huge;
+    }
+}
+
+.button__regular--default {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.yygs-logo {
+    background-color: white;
+    padding: $baseline;
+    margin-bottom: $margin-huge;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: $radius-tier-2;
 }

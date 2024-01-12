@@ -34,7 +34,6 @@ $menu-breakpoint: 480px;
       cursor: pointer;
     }
     
-    
     .menu-item__name{
       @include row;
       white-space: nowrap;
@@ -67,18 +66,18 @@ $menu-breakpoint: 480px;
     .ingredients-list li:not(:last-child):after {
       content: ',';
      }
-
   }
 
   .dip {
     @include fontsizeLarge;
     text-transform: uppercase;
     margin: $baseline;
-  
   }
 
   .dip-buttons-container {
     margin: $margin-sml;
+    display: flex;
+    flex-wrap: wrap;
 
     .button__regular--default {
       background-color: $colorLightGray;
@@ -88,8 +87,6 @@ $menu-breakpoint: 480px;
       margin: $margin-nano;
       font-weight: 400;
       padding: $padding-sml;
-      
-
 
       &:hover {
         background-color: $colorCoal;
