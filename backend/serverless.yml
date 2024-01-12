@@ -1,20 +1,76 @@
 service: aws
-frameworkVersion: '3'
+frameworkVersion: "3"
 useDotenv: true
 
 provider:
-  stage: dev
   name: aws
-  runtime: nodejs18.x
-  httpApi:
-    name: YYGS
+  region: eu-north-1
+  profile: ${env:PROFILE}
   iam:
-    role: arn:aws:iam::119763079540:role/test
-  region:
-    eu-north-1
+    role: ${env:LAMBDA_ROLE}
+  deploymentMethod: direct
+
+package:
+  individually: true
+
+plugins:
+  - serverless-webpack
 
 functions:
-  - ${file(./packages/functions/functions.yml)}
+  getMenu:
+    handler: "./src/functions/getMenu/index.handler"
+    events:
+      - httpApi:
+          path: /api/menu
+          method: GET
+  addToOrder:
+    handler: "./src/functions/addToOrder/index.handler"
+    events:
+      - httpApi:
+          path: /api/order
+          method: POST
+  postMenuItem:
+    handler: "./src/functions/postMenuItem/index.handler"
+    events:
+      - httpApi:
+          path: /api/menu/add
+          method: POST
+  removeFromOrder:
+    handler: "./src/functions/removeFromOrder/index.handler"
+    events:
+      - httpApi:
+          path: /api/order/delete/{orderId}
+          method: DELETE
+  placeOrder:
+    handler: "./src/functions/placeOrder/index.handler"
+    events:
+      - httpApi:
+          path: /api/order/placeOrder
+          method: POST
+  getOrder:
+    handler: "./src/functions/getOrder/index.handler"
+    events:
+      - httpApi:
+          path: /api/order/{orderId}
+          method: GET
+  registerUser:
+    handler: "./src/functions/registerUser/index.handler"
+    events:
+      - httpApi:
+          path: /api/user/register
+          method: POST
+  loginUser:
+    handler: "./src/functions/loginUser/index.handler"
+    events:
+      - httpApi:
+          path: /api/user/login
+          method: POST
+  getUser:
+    handler: "./src/functions/getUser/index.handler"
+    events:
+      - httpApi:
+          path: /api/user/{id}
+          method: GET
 
 resources:
   Resources:
@@ -22,35 +78,35 @@ resources:
       Type: AWS::DynamoDB::Table
       DeletionPolicy: Delete
       Properties:
-        TableName: YYGS_Users
+        TableName: YYGSUsers
         AttributeDefinitions:
-          - AttributeName: id
+          - AttributeName: userID
             AttributeType: S
-        BillingMode: PAY_PER_REQUEST
         KeySchema:
-          - AttributeName: id
+          - AttributeName: userID
             KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
     YYGSMenu:
       Type: AWS::DynamoDB::Table
       DeletionPolicy: Retain
       Properties:
-        TableName: YYGS_Menu
+        TableName: YYGSMenu
         AttributeDefinitions:
           - AttributeName: name
             AttributeType: S
-        BillingMode: PAY_PER_REQUEST
         KeySchema:
           - AttributeName: name
             KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
     YYGSOrders:
       Type: AWS::DynamoDB::Table
       DeletionPolicy: Delete
       Properties:
-        TableName: YYGS_Orders
+        TableName: YYGSOrders
         AttributeDefinitions:
           - AttributeName: id
             AttributeType: S
-        BillingMode: PAY_PER_REQUEST
         KeySchema:
           - AttributeName: id
             KeyType: HASH
+        BillingMode: PAY_PER_REQUEST
