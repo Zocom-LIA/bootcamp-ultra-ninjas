@@ -1,20 +1,24 @@
 service: aws
 frameworkVersion: "3"
-useDotenv: true
 
 provider:
   name: aws
+  runtime: nodejs18.x
   region: eu-north-1
   profile: ${env:PROFILE}
+  httpApi:
+    cors: true
   iam:
     role: ${env:LAMBDA_ROLE}
   deploymentMethod: direct
 
+plugins:
+  - serverless-webpack
+
 package:
   individually: true
 
-plugins:
-  - serverless-webpack
+useDotenv: true
 
 functions:
   getMenu:
@@ -27,7 +31,7 @@ functions:
     handler: "./src/functions/addToOrder/index.handler"
     events:
       - httpApi:
-          path: /api/order
+          path: /api/order/cart/{orderId}
           method: POST
   postMenuItem:
     handler: "./src/functions/postMenuItem/index.handler"

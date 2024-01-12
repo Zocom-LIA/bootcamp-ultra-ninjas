@@ -1,12 +1,12 @@
 import { CartItem } from "@zocom/cartitem";
 import "./style.scss";
-import { mockOrder } from "@zocom/order";
+import { cartOrder } from "@zocom/order";
 import { TotalPrice } from "@zocom/totalprice";
 import logoIcon from "./../../../../../assets/logo.svg";
 
 export const ReceiptComponent = () => {
   // fix these two later when BE
-  const total = mockOrder.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  const total = cartOrder.reduce((acc, item) => acc + item.price * item.quantity, 0);
   const orderId = "4kjwsdf234k";
 
   return (
@@ -17,7 +17,7 @@ export const ReceiptComponent = () => {
         <p className="header__order-id">#{orderId}</p>
       </header>
       <ul>
-        {mockOrder.map((item) => (
+        {cartOrder.map((item) => (
           <CartItem key={item.id} id={item.id} name={item.name} price={item.price} quantity={item.quantity} showQuantityButtons={false} />
         ))}
       </ul>

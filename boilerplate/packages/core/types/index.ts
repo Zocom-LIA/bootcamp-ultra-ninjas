@@ -11,14 +11,51 @@ export enum StyleTypes {
   "LIGHT" = "light",
 }
 
-interface MenuItem {
-  name: string,
-  desc: string,
-  ingredients: Array<string>,
-  price: number
+export interface MenuItem {
+  name: string;
+  desc: string;
+  ingredients: string[];
+  price: number;
+  id: number;
 }
 
-interface User {
-  name: string,
-  password: string
+export interface User {
+  username: string;
+  password: string;
+  userID?: string;
+  staff?: boolean;
+}
+
+export interface MenuItemData {
+  name: string;
+  desc?: string;
+  ingredients?: string[];
+  price: number;
+  id: number;
+}
+
+export interface CartItemData {
+  info: MenuItemData;
+  totalPrice: number;
+  quantity: number;
+  orderId?: string;
+}
+
+export interface Menu {
+  wontons: MenuItemData[];
+  dip: MenuItemData[];
+}
+
+export interface OrderProps {
+  id?: string;
+  items: CartItemData[];
+  totalOrderPrice: number;
+  totalQuantity?: number;
+}
+
+export interface OrderType {
+  id: string;
+  items: MenuItemData[];
+  totalOrderPrice: number;
+  totalQuantity?: number;
 }

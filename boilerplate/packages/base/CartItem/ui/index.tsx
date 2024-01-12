@@ -6,14 +6,14 @@ interface CartItemProps {
   id: number;
   quantity: number;
   showQuantityButtons?: boolean;
-  itemIncrease?: (id: number) => void;
+  itemIncrease?: (id: number, e: React.MouseEvent) => Promise<void>;
   itemDecrease?: (id: number) => void;
 }
 
 export const CartItem = ({ name, price, id, quantity, showQuantityButtons, itemIncrease, itemDecrease }: CartItemProps) => {
-  const handleIncrease = () => {
+  const handleIncrease = (e: React.MouseEvent) => {
     if (itemIncrease) {
-      itemIncrease(id);
+      itemIncrease(id, e);
     }
   };
 
