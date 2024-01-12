@@ -1,5 +1,4 @@
-
-import   {LoginComponent}  from "../../../base/login/ui/index";
+import { LoginComponent } from "../../../base/LoginComponent/ui/index";
 import "./style.scss";
 
 //import React from "react";
@@ -7,9 +6,7 @@ import "./style.scss";
 export const Login = () => {
   return (
     <div className="loginPage">
-      
-      <LoginComponent/>
-      
+      <LoginComponent />
     </div>
   );
 };
