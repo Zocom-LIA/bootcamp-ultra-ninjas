@@ -5,8 +5,17 @@ import { StyleTypes } from "@zocom/types";
 import { ReceiptComponent } from "@zocom/receiptcomponent";
 import { Link } from "react-router-dom";
 import Animations from "../../../../src/Animations";
+import { useState } from "react";
+import { cartOrder } from "@zocom/order";
 
 export const Receipt = () => {
+  const [updateCart, setUpdateCart] = useState(cartOrder);
+
+  const handleClick = () => {
+    setUpdateCart([]);
+    cartOrder.length = 0;
+  };
+
   return (
     <div className="receipt">
       <Header />
@@ -15,7 +24,7 @@ export const Receipt = () => {
           <ReceiptComponent />
           <section className="receipt__button">
             <Link to="/menu">
-              <Button type={ButtonType.STRETCH} style={StyleTypes.DARK}>
+              <Button type={ButtonType.STRETCH} style={StyleTypes.DARK} onClick={handleClick}>
                 Gör en ny beställning
               </Button>
             </Link>
