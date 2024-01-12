@@ -37,9 +37,17 @@ const EtaPage = () => {
             Beställ mer
           </Button>
           </Link>
-          <Button type={ButtonType.STRETCH} onClick={handleOrderCompletion}>
-          {orderDone ? 'Se kvitto' : 'Se kvitto / Done'}
-          </Button>
+          {orderDone ? (
+            <Link to="/order/receipt" className='eta-page__linkButton'>
+              <Button type={ButtonType.STRETCH}>
+                Se kvitto
+              </Button>
+            </Link>
+          ) : (
+            <Button type={ButtonType.STRETCH} onClick={handleOrderCompletion}>
+              order Done / "Se kvitto"  
+            </Button>
+          )}
         </div>
       </div>
     </div>
